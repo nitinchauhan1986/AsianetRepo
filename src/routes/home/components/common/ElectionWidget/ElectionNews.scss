@@ -1,0 +1,38 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.newsHeading {
+  font-size: 16px;
+  line-height: 24px;
+  color: $black1;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  a {
+    color: inherit;
+    position: relative;
+    &:after {
+      position: absolute;
+      content: '';
+      border: solid #1a1a1a;
+      border-width: 0 2px 2px 0;
+      width: 8px;
+      height: 8px;
+      top: 5px;
+      margin-left: 6px;
+      @include transform(rotate(-45deg));
+    }
+  }
+}
+
+.newsWrapper {
+  margin: 0 -3.5%;
+  @include flexbox;
+  @include flexwrap;
+  figure {
+    width: 43%;
+    margin: 0 3.5% 16px;
+    &:nth-last-child(-n+2) {
+      margin-bottom: 0;
+    }
+  }
+}

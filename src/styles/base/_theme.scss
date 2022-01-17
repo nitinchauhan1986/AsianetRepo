@@ -1,0 +1,25 @@
+:root {
+  --primary-dark-color: #1a1a1a;
+  --primary-dark-color-rgba: 26, 26, 26;
+  --border-color: #ececec;
+  --invert: invert(0);
+  --white-color: #fff;
+  --white-color-rgba: 255, 255, 255;
+  --offwhite-color: #f6f6f6;
+}
+
+// :global {
+  //   @media (prefers-color-scheme: dark) {
+  //     :root {
+  //       --primary-dark-color: rgba(255, 255, 255, .8);
+  //       --border-color: hsl(210, 10%, 22%);
+  //       --invert: invert(1);
+  //       --white-color: #1a1a1a;
+  //       --offwhite-color: #444444;
+  //     }
+
+  //     :is(.contentwrapper, html) {
+  //       background: hsl(210, 10%, 10%);
+  //     }
+  //   }
+  // }

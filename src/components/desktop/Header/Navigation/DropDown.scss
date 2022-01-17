@@ -1,0 +1,249 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.dropdownList {
+  &.subitem {
+    &.list {
+      min-width: 360px;
+
+      .listItem {
+        padding-bottom: 14px;
+        margin-bottom: 12px;
+        @include border-bottom;
+
+        &:nth-child(6) {
+          margin-bottom: 0;
+          border-bottom: 0;
+          padding-bottom: 0;
+
+          &~li {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.video,
+    &.photo {
+      padding: 0 16px;
+
+      :global {
+        .col_l_3 {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    .listLink:not(.photo):not(.video) {
+      @include flexbox;
+      @include justify-content-between;
+      @include align-items-start;
+
+      .image {
+        width: 80px;
+        position: relative;
+        top: 2px;
+      }
+
+      .title {
+        flex: 1;
+        line-height: 18px;
+        @include line-clamp(3);
+      }
+    }
+  }
+
+  &:not(.subitem) {
+    &.list {
+      width: 420px;
+
+      .listItem {
+        &:first-child {
+          margin-bottom: 10px;
+
+          .listLink {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 700;
+            @include flexbox;
+            @include justify-content-between;
+          }
+
+          span {
+            flex: 1;
+            @include line-clamp(3);
+          }
+        }
+
+        &:not(:first-child) {
+          padding: 10px 0;
+          border-bottom: 1px dotted rgba($black-rgba, 0.3);
+
+          .listLink {
+            @include line-clamp(2);
+          }
+        }
+
+        &:last-child {
+          border-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &.video {
+    .itemInfo {
+      height: 20px;
+      line-height: 20px;
+      min-width: 55px;
+      padding: 0 8px;
+      @include border-radius(4px);
+
+      &:before {
+        width: 12px;
+        height: 12px;
+        top: 2px;
+        margin-right: 4px;
+        background-size: 475px;
+        @include us-home-sprite(-55px -253px);
+      }
+    }
+  }
+
+  &.photo {
+    .itemInfo {
+      height: 21px;
+      line-height: 21px;
+      min-width: 30px;
+      @include border-radius(2px);
+
+      &:before {
+        width: 15px;
+        height: 13px;
+        top: 2px;
+        background-size: 370px;
+        @include us-home-sprite(-33px -524px);
+      }
+    }
+  }
+
+  &.photo,
+  &.video {
+    //width: 456px;
+    @include flexbox;
+    @include flexwrap;
+
+    .listItem {
+      width: calc(50% - 8px);
+
+      &:nth-child(2)~li {
+        margin-top: 16px;
+      }
+
+      &:nth-child(2n) {
+        margin-left: 16px;
+      }
+    }
+
+    .listLink {
+      display: block;
+      position: relative;
+    }
+
+    .image {
+      @include border-radius(4px);
+
+      .content {
+        @include border-radius(inherit);
+
+        &:before {
+          position: absolute;
+          content: '';
+          background: rgba($black-rgba, 0.3);
+          height: 100%;
+          width: 100%;
+          left: 0;
+          bottom: 0;
+          @include border-radius(inherit);
+        }
+      }
+
+      img {
+        @include border-radius(inherit);
+      }
+    }
+
+    .details {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 10px 12px;
+    }
+
+    .itemInfo {
+      background: $new-rust-color-theme;
+      display: inline-block;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: $text-white;
+      font-style: normal;
+      margin-bottom: 4px;
+
+      &:before {
+        content: '';
+        position: relative;
+        display: inline-block;
+      }
+    }
+
+    .title {
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 700;
+      color: $text-white;
+      @include line-clamp(2);
+    }
+  }
+
+  &.list {
+    .listLink {
+      font-size: 13px;
+      line-height: 19px;
+      font-weight: 500;
+      color: $black1;
+      @include transition(all 0.3s);
+
+      &:hover {
+        color: #595959 !important;
+      }
+    }
+
+    .image {
+      width: 130px;
+      margin-right: 20px;
+      @include border-radius(3px);
+
+      .content {
+        @include border-radius(inherit);
+
+        img {
+          @include border-radius(inherit);
+        }
+      }
+    }
+  }
+
+  .image {
+    @include aspect-ratio(16, 9);
+  }
+}
+
+.title {
+  @include transition(all 0.3s);
+
+  &:hover {
+    color: #595959;
+  }
+}

@@ -1,0 +1,770 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.tabSlider {
+  .tabs {
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+
+    &.active_tab {
+      border-bottom-color: $toi_red;
+      color: $toi_red;
+      display: inline-block;
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 16px;
+    padding-left: 16px;
+    @include swipe-activated;
+
+    .tabs {
+      font: 600 12px/16px $Montserrat;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-right: 16px;
+
+      &.slick-active {
+        border-bottom-color: $toi_red;
+        color: $toi_red;
+      }
+    }
+  }
+
+  @include no-mobile {
+    margin-bottom: 20px;
+  }
+
+  :global {
+    .slick-list {
+      margin-right: 60px;
+      overflow: hidden;
+    }
+
+    .slick-slide {
+      font: 500 12px/16px $Montserrat;
+      color: $text-black;
+      text-transform: uppercase;
+      margin-right: 24px;
+      cursor: pointer;
+      @include transition(all 0.5s);
+
+      &:hover {
+        color: $toi_red;
+      }
+
+      &.slick-disabled {
+        @include Opacity(0.3);
+      }
+    }
+
+    .slick-dots {
+      display: none !important;
+    }
+
+    .slick-arrow {
+      position: absolute;
+      text-indent: -9999px;
+      background: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #1a1a1a;
+      bottom: 2px;
+      @include border-radius(50%);
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-left: 1px solid #1a1a1a;
+        border-top: 1px solid #1a1a1a;
+        top: 6px;
+      }
+
+      &.slick-next:after {
+        right: 7px;
+        @include transform(rotate(135deg));
+      }
+
+      &.slick-prev:after {
+        right: 5px;
+        @include transform(rotate(-45deg));
+      }
+
+      &.slick-next {
+        right: 0;
+      }
+
+      &.slick-prev {
+        right: 30px;
+      }
+    }
+  }
+}
+
+.carCMSdWrapper {
+  overflow: hidden;
+  > div + span {
+    margin-bottom: 16px;
+    margin-top: 50px;
+  }
+}
+
+.coronaWidget {
+  position: relative;
+
+  @include mobile {
+    background: $white;
+    padding: 22px 0;
+  }
+
+  @include no-mobile {
+    padding-top: 10px;
+
+    &.innerWidget {
+      margin-top: 30px;
+    }
+  }
+}
+
+.heading {
+  font: 700 20px/28px $Montserrat;
+  color: $text-black;
+  text-align: center;
+  margin-bottom: 16px;
+
+  @include mobile {
+    padding: 0 16px;
+  }
+
+  @include no-mobile {
+    font: 700 28px/36px $Montserrat;
+    padding: 0 40px;
+    margin-bottom: 24px;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  right: 12px;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  border: 0px;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    content: '';
+    width: 1px;
+    height: 16px;
+    background: $graynew;
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    @include transform(rotate(45deg));
+  }
+
+  &:after {
+    @include transform(rotate(-45deg));
+  }
+}
+
+.buttonGrp {
+  text-align: center;
+  @include flexbox;
+  @include justify-content-center;
+  @include align-items-center;
+
+  @include no-mobile {
+    margin-bottom: 16px;
+  }
+}
+
+.button {
+  background: $toi_red;
+  font: 700 12px/16px $Montserrat;
+  color: $text-white;
+  text-transform: uppercase;
+  padding: 0 24px;
+  line-height: 32px;
+  position: relative;
+  display: inline-block;
+  @include border-radius(4px);
+  @include animationhover;
+
+  .arrow {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: solid $white;
+    border-width: 1px 1px 0 0;
+    position: relative;
+    margin-left: 6px;
+    top: -1px;
+    @include transform(rotate(45deg));
+  }
+}
+
+@include no-mobile {
+  .buttoninner {
+    padding-right: 44px;
+    position: relative;
+  }
+}
+
+.slickSlider {
+  min-height: 217px;
+
+  iframe {
+    min-height: 200px;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+  }
+
+  :global {
+    .slick-slider {
+      padding: 0 1px;
+    }
+
+    .slick-list {
+      // margin: 0 -18px;
+      padding: 1px;
+    }
+
+    .slick-track {
+      @include flexbox;
+    }
+
+    .slick-slide {
+      min-width: 360px;
+      height: inherit;
+      position: relative;
+      float: none;
+      margin: 0 16px 0 0;
+      @include border-radius(4px);
+
+      @include tablet-portrait {
+        margin-right: 14px;
+      }
+    }
+
+    .slick-disabled {
+      @include Opacity(0.3);
+    }
+
+    .slick-dots {
+      display: flex !important;
+      justify-content: center;
+      margin-top: 14px;
+
+      .slick-active {
+        button {
+          background: #000;
+        }
+      }
+
+      button {
+        background: #ccc;
+        height: 8px;
+        width: 8px;
+        border: none;
+        // text-indent: -9999px;
+        margin-right: 6px;
+        content-visibility: hidden;
+        @include border-radius(10px);
+      }
+    }
+
+    .slick-arrow {
+      position: absolute;
+      text-indent: -9999px;
+      width: 25px;
+      height: 16px;
+      right: 0px;
+      bottom: -25px;
+      z-index: 1;
+      background: transparent;
+      border: none;
+      @include us-home-sprite(-12px -825px);
+      @include transform(scale(1.2));
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      &.slick-prev {
+        right: 32px;
+      }
+
+      &.slick-next {
+        @include transform(rotate(180deg) scale(1.2));
+
+        bottom: -30px;
+      }
+    }
+  }
+}
+
+.dataItemWrapper {
+  // margin: 0 -20px;
+  padding: 1px;
+  @include flexbox;
+
+  // @include justify-content-between;
+  @include no-mobile {
+    > div {
+      margin-right: 38px;
+    }
+  }
+
+  @include tablet-portrait {
+    margin: 0 -15px;
+    @include swipe-activated;
+  }
+
+  @include mobile {
+    margin: 0;
+    overflow: auto;
+    white-space: nowrap;
+    display: block;
+
+    > div {
+      display: inline-block;
+      margin: 0 0 0 16px;
+      vertical-align: top;
+      position: relative;
+      min-height: 216px;
+
+      &:last-child {
+        margin-right: 16px;
+      }
+
+      // &:before {
+      //   content: '';
+      //   border: 1px solid #ececec;
+      //   @include border-radius(4px);
+      //   width: 100%;
+      //   height: 100%;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   z-index: 1;
+      //   background-color: $white;
+      // }
+    }
+  }
+}
+
+.dataItem {
+  box-shadow: 0 0 0 1px #ebebeb;
+  margin: 0 20px;
+  flex: 1;
+  @include border-radius(4px);
+
+  @include tablet-portrait {
+    margin: 0 15px;
+    min-width: 320px;
+  }
+}
+
+.sliderWrapper {
+  position: relative;
+  padding-bottom: 20px;
+
+  @include mobile {
+    background-color: $white;
+    padding: 16px 0;
+  }
+
+  &:not(.nospacing) {
+    margin: 24px 0 8px;
+
+    @include mobile {
+      margin: 8px 0 0;
+    }
+  }
+
+  .headContainer {
+    @include flexbox;
+
+    @include no-mobile {
+      padding: 0 0px 12px;
+    }
+
+    @include mobile {
+      padding: 0 0 0 16px;
+    }
+
+    .linkheading {
+      font: 700 20px/28px $Montserrat;
+      color: $black1;
+      text-transform: uppercase;
+
+      > a {
+        color: $black1;
+        position: relative;
+
+        @include no-mobile {
+          &:after {
+            content: '';
+            @include transform(translateY(-50%) rotate(45deg));
+            width: 9px;
+            height: 9px;
+            border: solid #000;
+            border-width: 2px 2px 0 0;
+            position: absolute;
+            top: 50%;
+            right: -18px;
+          }
+        }
+      }
+
+      @include mobile {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 12px;
+      }
+      &.liveEvent {
+        > a {
+          &:after {
+            right: -64px;
+          }
+        }
+        + .livetxt {
+          margin-left: 6px;
+        }
+      }
+    }
+
+    .uslinkheading {
+      font: 800 14px/22px $Montserrat;
+      margin-top: 8px;
+
+      & + .ads {
+        margin-top: 8px;
+      }
+    }
+
+    .ads {
+      margin-left: auto;
+      align-items: center;
+      height: 20px;
+      @include flexbox;
+
+      img {
+        height: 16px;
+        margin-left: 10px;
+        width: 89px;
+      }
+
+      @include mobile {
+        margin-right: 16px;
+        margin-top: 12px;
+      }
+    }
+    .livetxt {
+      background-color: $toi_red;
+      color: $text-white;
+      @include flexbox;
+      @include align-items-center;
+      @include justify-content-center;
+      font: bold 12px/12px $Montserrat;
+      width: 43px;
+      height: 20px;
+      @include border-radius(4px);
+      align-self: center;
+      text-transform: uppercase;
+      @include mobile {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  // :global {
+  //   .slick-slider {
+  //     padding: 0 1px;
+  //   }
+
+  //   .slick-list {
+  //     // margin: 0 -18px;
+  //     padding: 1px;
+  //   }
+
+  //   .slick-track {
+  //     @include flexbox;
+  //   }
+
+  //   .slick-slide {
+  //     min-width: 360px;
+  //     height: inherit;
+  //     position: relative;
+  //     float: none;
+  //     margin: 0 38px 0 0;
+  //     box-shadow: 0 0 0 1px #ebebeb;
+  //     @include border-radius(4px);
+  //     overflow: hidden;
+
+  //     @include tablet-portrait {
+  //       margin-right: 14px;
+  //     }
+  //   }
+
+  //   .slick-disabled {
+  //     @include Opacity(0.3);
+  //   }
+
+  //   .slick-dots {
+  //     display: flex !important;
+  //     justify-content: center;
+  //     margin-top: 14px;
+
+  //     .slick-active {
+  //       button {
+  //         background: #000;
+  //       }
+  //     }
+
+  //     button {
+  //       background: #ccc;
+  //       height: 8px;
+  //       width: 8px;
+  //       border: none;
+  //       // text-indent: -9999px;
+  //       margin-right: 6px;
+  //       content-visibility: hidden;
+  //       @include border-radius(10px);
+  //     }
+  //   }
+
+  //   .slick-arrow {
+  //     position: absolute;
+  //     text-indent: -9999px;
+  //     width: 25px;
+  //     height: 16px;
+  //     right: 0px;
+  //     bottom: -25px;
+  //     z-index: 1;
+  //     background: transparent;
+  //     border: none;
+  //     @include us-home-sprite(-12px -825px);
+  //     @include transform(scale(1.2));
+
+  //     &::before,
+  //     &::after {
+  //       display: none;
+  //     }
+
+  //     &.slick-prev {
+  //       right: 32px;
+  //     }
+
+  //     &.slick-next {
+  //       @include transform(rotate(180deg) scale(1.2));
+
+  //       bottom: -30px;
+  //     }
+  //   }
+  // }
+
+  &.usbottommrg {
+    margin-bottom: 32px;
+    + span {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.searchdropList {
+  position: absolute;
+  box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.2);
+  @include border-radius(4px 4px 0 0);
+
+  @include no-mobile {
+    width: 300px;
+    right: 0;
+    top: 30px;
+    z-index: 1001;
+  }
+
+  [class*='menu'] {
+    > div {
+      &::-webkit-scrollbar {
+        width: 8px;
+        padding: 0;
+        display: block;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background: #ececec;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        background: #1a1a1a;
+        width: 0px;
+        padding: 0;
+      }
+    }
+  }
+
+  @include mobile {
+    position: fixed;
+    width: (calc(100% - 32px));
+    right: 16px;
+    bottom: 0;
+    z-index: 1000;
+
+    &:before {
+      position: fixed;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background: rgba(#0d0d0d, 0.6);
+      left: 0;
+      top: 0;
+    }
+  }
+
+  [class*='control']:hover {
+    border-color: transparent;
+  }
+}
+
+.selectedStateWrapper {
+  margin-bottom: 16px;
+  text-align: right;
+}
+
+.selectedState {
+  display: inline-block;
+  font: 700 12px/16px $Montserrat;
+  cursor: pointer;
+  color: $text-black;
+  text-transform: uppercase;
+  position: relative;
+  padding-right: 12px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    border: 1px solid $black1;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 6px;
+    height: 6px;
+    right: 1px;
+    top: 3px;
+    @include transform(rotate(45deg));
+  }
+
+  @include mobile {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 20px;
+  }
+}
+
+.shareBtn {
+  background: none;
+  padding: 0;
+  border: 1px solid $toi_red;
+  margin-left: 12px;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  @include transition(all 0.5s);
+  @include border-radius(4px);
+
+  @include no-mobile {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+  }
+
+  .shareIcon {
+    background: $white url(https://static.toiimg.com/photo/83330720.cms)
+      no-repeat -10px -262px;
+    width: 30px;
+    height: 30px;
+    @include border-radius(4px);
+
+    @include mobile {
+      display: inline-block;
+    }
+
+    @include no-mobile {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 1;
+      margin-top: -15px;
+    }
+  }
+
+  .sharePopup {
+    position: absolute;
+    height: 40px;
+    padding: 7px 0 0 8px;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    @include border-radius(4px);
+    @include transition(all 0.3s);
+
+    @include no-mobile {
+      width: 172px;
+    }
+
+    @include mobile {
+      width: 290px;
+      top: -4px;
+      right: -31px;
+    }
+  }
+
+  @include no-mobile {
+    &:hover {
+      box-shadow: 0 0 8px 0 rgba(26, 26, 26, 0.2);
+      border-color: transparent;
+      width: 200px;
+      height: 40px;
+      top: -4px;
+    }
+  }
+
+  &:hover {
+    .sharePopup {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+}
+
+.widget_intrinsic_height1 {
+  content-visibility: auto;
+  contain-intrinsic-size: 284px;
+}
+.widget_intrinsic_height2 {
+  content-visibility: auto;
+  contain-intrinsic-size: 252px;
+}
+:global(.coronaaswidget) {
+  .sliderWrapper {
+    &:not(.nospacing) {
+      margin: 0 0 32px;
+      @include mobile {
+        margin: 8px 0 0;
+      }
+    }
+  }
+}

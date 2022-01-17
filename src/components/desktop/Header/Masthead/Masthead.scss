@@ -1,0 +1,99 @@
+//@import './src/scss/main.scss';
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.masthead {
+  background: #000;
+
+  >div {
+    @include flexbox;
+    @include align-items-center;
+    @include justify-content-center;
+
+  }
+
+  &.toiLogo {
+    padding: 20px 0;
+  }
+
+  &.snowwhite {
+    background: #fff;
+    padding: 0;
+    min-height: 86px;
+
+    :global {
+      .contentwrapper {
+        min-height: 86px;
+        position: relative;
+
+
+        >a {
+          min-height: 86px;
+          @include flexbox;
+          align-items: center;
+
+          >img {
+            object-fit: cover;
+            height: 86px;
+            filter: var(--invert);
+
+          }
+        }
+      }
+    }
+  }
+
+  .mastheadAds {
+    @include flexbox;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+
+    .left {
+      margin-right: 20px;
+    }
+
+    .right {
+      margin-left: auto;
+
+      @include tablet-portrait {
+        display: none
+      }
+    }
+  }
+}
+
+.poweredby {
+  position: absolute;
+  bottom: 8px;
+  font-size: 12px;
+  color: $graynew;
+}
+
+
+.earplugLeft,
+.earplugRight {
+  max-height: 70px;
+  width: 210px;
+  max-width: 210px;
+  position: absolute;
+  z-index:1;
+
+  @include tablet-portrait {
+    display: none;
+  }
+}
+
+.earplugRight {
+  right: 12px;
+}
+
+.earplugLeft {
+  left: 12px;
+}
+
+.logoToi {
+  flex: 1;
+  @include flexbox;
+}

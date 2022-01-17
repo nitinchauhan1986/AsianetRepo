@@ -1,0 +1,116 @@
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.sports-sprite {
+  @include us-home-sprite();
+  display: inline-block;
+}
+
+.sociable {
+  display: inline-block;
+  padding-top: 3px;
+  vertical-align: middle;
+
+  li {
+    display: inline-block;
+    margin-left: 8px;
+
+    a {
+      display: block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid rgba(255, 255, 255, 1);
+      border-radius: 50%;
+      background-size: 340px;
+      opacity: .6;
+      @include transition(all .5s);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &.fb {
+      a {
+        background-position: -4px -890px;
+      }
+    }
+
+    &.twitter {
+      a {
+        background-position: -6px -807px;
+        background-size: 300px;
+      }
+    }
+
+    // &.linkedin {
+    //   a { background-position:-73px 0; }
+    // }
+    &.rss {
+      a {
+        background-position: -11px -1666px;
+        background-size: 500px;
+      }
+    }
+
+    &.youtube {
+      a {
+        background-position: -6px -820px;
+        background-size: 280px;
+      }
+    }
+
+    // &.fb:hover {
+    //   a {  background-position: -372px 0px; }
+    // }
+    // &.twitter:hover {
+    //   a { background-position: -398px 0px; }
+    // }
+    // &.linkedin {
+    //   a { background-position:-73px 0; }
+    // }
+    // &.rss:hover {
+    //   a { background-position: -451px 0px;}
+    // }
+    // &.youtube:hover {
+    //   a {background-position: -478px -111px}
+    // }
+
+  }
+
+  &.snowwhite {
+    li {
+      a {
+        border-color: #595959;
+      }
+
+      &.twitter {
+        a {
+          background-position: -34px -807px;
+        }
+      }
+
+      &.fb {
+        a {
+          background-position: -36px -890px;
+        }
+      }
+
+      &.rss {
+        a {
+          background-position: -43px -1666px;
+        }
+      }
+
+      &.youtube {
+        a {
+          background-position: -32px -820px;
+        }
+      }
+    }
+  }
+}
+:global(.toiplusplanpage) {
+  .sociable {
+    display: none;
+  }
+}

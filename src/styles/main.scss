@@ -1,0 +1,51 @@
+@import './base/typography';
+@import './base/theme';
+@import './helpers/mixins';
+@import './base/global';
+@import './base/base';
+@import './components/grid';
+
+body {
+  background-color: $orange-color-theme;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+@custom-media --samplemedia (min-width: 1000px) and (max-width: 1800px);
+
+.header {
+  height: 100px;
+  background: #ccc;
+  margin: 0px;
+  display: flex;
+
+  & .abc {
+    color: white;
+  }
+}
+@media (--samplemedia) {
+  .header {
+    background: blue;
+    margin: 10px;
+  }
+}
+@include mobile {
+  .header {
+    background: pink;
+  }
+}
+
+// Dummy
+.body {
+  display: flex;
+  .left {
+    background: lightblue;
+  }
+  .right {
+    flex: 1;
+    background: gray;
+  }
+}

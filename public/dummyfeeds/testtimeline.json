@@ -1,0 +1,140 @@
+{
+  "highlights": [
+    {
+      "type": "t",
+      "title": "19.5 : India:117/1",
+      "description":
+        "19.5: T Shamsi to S Dhawan, Loopy full ball outside off, spinning away, Dhawan once again fails to connect with his horizontal bat shot.",
+      "overridelink": "",
+      "timestamp": 1521541959736
+    },
+    {
+      "type": "t",
+      "title": "19.4 : India:117/1",
+      "description":
+        "19.4: T Shamsi to S Dhawan, Full flighted ball outside off, driven off the front foot but straight to mid off.",
+      "overridelink": "",
+      "timestamp": 1521541959736
+    },
+    {
+      "type": "t",
+      "title": "19.3 : India:117/1",
+      "description":
+        "19.3: T Shamsi to S Dhawan, Leans forward to a full ball and defends it back to the bowler.",
+      "overridelink": "",
+      "timestamp": 1521541959736
+    }
+  ],
+  "data": {
+    "type": "collection",
+    "title": "optional value ( ! Mandatory )",
+    "heading": "optional value ( ! Mandatory )",
+    "totalCount": "200",
+    "contents": [
+      {
+        "type": "cricket",
+        "teamName": "South Africa",
+        "timestamp": 1521718271499,
+        "overs": "19",
+        "balls": "1",
+        "wicket": true,
+        "scored": "0",
+        "runs": "151",
+        "wicketsDown": "10",
+        "description": "kshitiz's commentary 2"
+      },
+      {
+        "type": "cricket",
+        "teamName": "South Africa",
+        "timestamp": 1521718271499,
+        "overs": "19",
+        "balls": "1",
+        "wicket": true,
+        "scored": "0",
+        "runs": "151",
+        "wicketsDown": "10",
+        "description":
+          "P Negi to S Nadeem, <span class='bold'>OUT!</span> All over! Drifting down the leg side, Nadeem looks to clear Delhi but fails to connect well. The ball falls straight down the throat of Jadhav at deep mid-wicket who takes a good catch. <span class='bold uppercase'>bangalore wib by 10 runs! </span>"
+      },
+      {
+        "type": "twitter",
+        "title": "Twitter: some title here",
+        "description":
+          "<blockquote class='twitter-tweet' data-partner='tweetdeck'> <p dir='ltr' lang='en'> 74% voter turnout till 4pm, it likely to go up as there are people in queues to vote even now: Election Commission <a href='https://twitter.com/hashtag/TripuraElection2018?src=hash&amp;ref_src=twsrc%5Etfw'>#TripuraElection2018</a> <a href='https://t.co/UWktStCOp7'>pic.twitter.com/UWktStCOp7</a></p> &amp;mdash; ANI (@ANI) <a href='https://twitter.com/ANI/status/965191946292559872?ref_src=twsrc%5Etfw'>February 18, 2018</a></blockquote>",
+        "overridelink": "",
+        "timestamp": 1521541959736
+      },
+      {
+        "type": "cricket",
+        "teamName": "South Africa",
+        "timestamp": 1521718271499,
+        "overs": "19",
+        "balls": "2",
+        "wicket": false,
+        "scored": "0",
+        "runs": "151",
+        "wicketsDown": "10",
+        "description":
+          "P Negi to S Nadeem, <span class='bold'>OUT!</span> All over! Drifting down the leg side, Nadeem looks to clear Delhi but fails to connect well. The ball falls straight down the throat of Jadhav at deep mid-wicket who takes a good catch. <span class='bold uppercase'>bangalore wib by 10 runs! </span>"
+      },
+      {
+        "type": "cricket",
+        "teamName": "South Africa",
+        "timestamp": 1521718271499,
+        "overs": "19",
+        "balls": "3",
+        "wicket": false,
+        "scored": "6",
+        "runs": "151",
+        "wicketsDown": "10",
+        "description":
+          "P Negi to S Nadeem, <span class='bold'>OUT!</span> All over! Drifting down the leg side, Nadeem looks to clear Delhi but fails to connect well. The ball falls straight down the throat of Jadhav at deep mid-wicket who takes a good catch. <span class='bold uppercase'>bangalore wib by 10 runs! </span>"
+      },
+      {
+        "type": "v",
+        "timestamp": 1521541959736,
+        "description":
+          "Can Dinesh Karthik be utilised as India's new finisher?",
+        "msid": "63382259",
+        "title": "Video Title",
+        "videoId": "1x1et77ggl",
+        "imgsize": "99322"
+      },
+      {
+        "type": "cricket",
+        "teamName": "South Africa",
+        "timestamp": 1521718271499,
+        "overs": "19",
+        "balls": "4",
+        "wicket": false,
+        "scored": "4lb",
+        "runs": "150",
+        "wicketsDown": "11",
+        "description":
+          "P Negi to S Nadeem, <span class='bold'>OUT!</span> All over! Drifting down the leg side, Nadeem looks to clear Delhi but fails to connect well. The ball falls straight down the throat of Jadhav at deep mid-wicket who takes a good catch. <span class='bold uppercase'>bangalore wib by 10 runs! </span>"
+      },
+      {
+        "type": "image",
+        "timestamp": 1521541959736,
+        "description":
+          "Img - Can Dinesh Karthik be utilised as India's new finisher?",
+        "msid": "63382259",
+        "title": "Image Title",
+        "imgsize": "99322"
+      },
+      {
+        "type": "cricket",
+        "teamName": "South Africa",
+        "timestamp": 1521718271499,
+        "overs": "19",
+        "balls": "6",
+        "wicket": false,
+        "scored": "0",
+        "runs": "151",
+        "wicketsDown": "10",
+        "description":
+          "P Negi to S Nadeem, <span class='bold'>OUT!</span> All over! Drifting down the leg side, Nadeem looks to clear Delhi but fails to connect well. The ball falls straight down the throat of Jadhav at deep mid-wicket who takes a good catch. <span class='bold uppercase'>bangalore wib by 10 runs! </span>"
+      }
+    ]
+  }
+}

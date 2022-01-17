@@ -1,0 +1,39 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.listingHeader {
+  @include flexbox;
+  width: 100%;
+  align-items: center;
+  height: 40px;
+
+  .logo {
+    @include flexbox;
+    align-items: center;
+
+    .logoImg {
+      width: 32px;
+      height: 32px;
+      margin-right: 12px;
+      @include mobile-icons(-10px -1384px);
+    }
+
+    span,
+    h1 {
+      font: 700 12px/16px $Montserrat;
+      color: $black1;
+      text-transform: uppercase;
+    }
+  }
+
+  .changeCity {
+    margin-left: auto;
+
+    .cityIcon {
+      width: 32px;
+      height: 32px;
+      @include mobile-icons(-10px -1434px);
+      display: inline-block;
+    }
+  }
+}

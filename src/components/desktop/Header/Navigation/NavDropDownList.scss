@@ -1,0 +1,170 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.navDropdownList {
+  background: $white;
+  opacity: 0;
+  position: absolute;
+  left: auto;
+  top: 43px;
+  min-width: 516px;
+  min-height: 200px;
+  box-shadow: 0 10px 25px rgba($black-rgba, 0.2);
+  pointer-events: none;
+  padding: 20px 20px 20px 32px;
+  white-space: normal;
+  @include border-radius(0 0 8px 8px);
+  @include transition(all 0.5s);
+  @include flexbox;
+
+  @include tablet {
+    max-width: 660px;
+    left: 0;
+  }
+
+  &.navV2 {
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+    left: 0px;
+    top: 40px !important;
+    border-top: 2px solid #000;
+
+    .itemdata>div {
+      display: flex;
+
+      >div {
+        flex: 1;
+        margin: 0 16px;
+        max-width: 25%;
+
+        figure {
+          margin: 0 0 16px;
+        }
+      }
+    }
+
+    .leftSec {
+      a.item {
+        padding-left: 0px;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.rightNav {
+    right: 0;
+
+    @include tablet {
+      left: auto;
+    }
+  }
+
+  &.showDropdown {
+    opacity: 1;
+    pointer-events: initial;
+    top: 40px;
+
+    .itemdata.active>div {
+      pointer-events: initial;
+      overflow-x: hidden;
+    }
+  }
+
+  .leftSec {
+    margin-right: 12px;
+    width: 190px;
+
+    &.col2 {
+      width: 300px;
+      column-count: 2;
+    }
+  }
+
+  .rightSec {
+    flex: 1;
+    @include border-left;
+  }
+}
+
+.item {
+  display: block;
+  font-size: 12px;
+  color: $text-black;
+  text-transform: capitalize;
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 8px;
+  @include transition(all 0.2s);
+  font-weight: 500;
+
+  &:before {
+    position: absolute;
+    content: '';
+    border: 1px solid rgba($black-rgba, 0.2);
+    width: 5px;
+    height: 5px;
+    left: 0;
+    top: 6px;
+    @include border-radius(50%);
+  }
+
+  &.active,
+  &:hover {
+    color: #595959;
+  }
+}
+
+.itemdata {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  @include transition(all 0.5s);
+
+  &.active {
+    opacity: 1;
+    height: auto;
+    overflow: auto;
+
+    >div {
+      opacity: 1;
+      top: 0;
+      box-shadow: none;
+
+      &:hover {
+        pointer-events: initial;
+      }
+    }
+  }
+}
+
+:global(.bgImg.gutter) {
+  :global(.layout_type_2) {
+    .leftSec {
+      width: 150px;
+    }
+  }
+}

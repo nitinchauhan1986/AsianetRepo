@@ -1,0 +1,46 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.trending {
+  margin: 30px 0;
+  padding: 10px 0;
+
+  &.astrendinglist {
+    margin: 0;
+    height: 34px;
+    background-color: var(--white-color);
+    overflow: hidden;
+
+    .trending_list {
+      overflow-x: auto;
+      height: 16px;
+
+      a {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .trending_list {
+    ul {
+      margin-left: 5px;
+      white-space: nowrap;
+
+      li {
+        display: inline-block;
+        border-right: 1px dotted #ccc;
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+    }
+
+    a {
+      font: 400 12px/16px $Montserrat;
+      display: block;
+      padding: 0 10px;
+      color: $graynew;
+    }
+  }
+}

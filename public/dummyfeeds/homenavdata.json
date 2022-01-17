@@ -1,0 +1,657 @@
+{
+  "path": "/",
+  "allMenu": {
+    "type": "allMenu",
+    "sections": [
+      {
+        "label": "News Home",
+        "link": "/",
+        "data": [
+          {
+            "link": "/city",
+            "label": "City"
+          },
+          {
+            "link": "/smart-cities/smartcities.cms",
+            "label": "Smart Cities"
+          },
+          {
+            "link": "/india",
+            "label": "India"
+          },
+          {
+            "link": "/brandwire/55686662.cms",
+            "newItem": "true",
+            "label": "Brandwire"
+          },
+          {
+            "link": "/elections",
+            "newItem": "true",
+            "label": "Elections"
+          },
+          {
+            "link": "/world",
+            "label": "World"
+          },
+          {
+            "link": "/crstories.cms",
+            "label": "Citizen Reporter"
+          },
+          {
+            "link": "/nrihome.cms",
+            "label": "NRI"
+          },
+          {
+            "link": "/uniform-civil-code",
+            "label": "Uniform Civil Code"
+          },
+          {
+            "link": "/india/pollution-news",
+            "label": "Pollution"
+          },
+          {
+            "link": "/international-yoga-day",
+            "label": "Yoga Day 2017"
+          },
+          {
+            "link": "/home/headlines",
+            "label": "Headlines"
+          },
+          {
+            "link": "/home/sundaytimes/articlelist/1945062111.cms",
+            "label": "Sunday Times"
+          },
+          {
+            "link": "/good-news/goodnews.cms",
+            "label": "Good News"
+          },
+          {
+            "link": "/toifeatures/50464604.cms",
+            "label": "TOI Features"
+          },
+          {
+            "link": "/specials",
+            "label": "Specials"
+          },
+          {
+            "link": "/goodgovernance/47082088.cms",
+            "label": "Good Governance"
+          }
+        ]
+      },
+      {
+        "label": "Editorials",
+        "data": [
+          {
+            "link": "http://blogs.timesofindia.indiatimes.com/toi-editorials/",
+            "label": "TOI Editorials"
+          },
+          {
+            "link": "http://blogs.economictimes.indiatimes.com/et-editorials/",
+            "label": "ET Editorials"
+          }
+        ]
+      },
+      {
+        "link": "/entertainment",
+        "label": "Entertainment",
+        "data": [
+          {
+            "link": "/entertainment/movie-reviews",
+            "label": "Movie Reviews"
+          },
+          {
+            "link": "http://photogallery.indiatimes.com/",
+            "label": "Photos"
+          },
+          {
+            "link":
+              "http://timesofindia.indiatimes.com/entertainment/music/articlelistls/27976150.cms",
+            "label": "Music"
+          },
+          {
+            "link": "http://beautypageants.indiatimes.com/",
+            "label": "Beauty Pageants"
+          },
+          {
+            "link": "http://timesofindia.indiatimes.com/entertainment/events",
+            "label": "Events"
+          },
+          {
+            "link": "http://www.filmfare.com",
+            "label": "Filmfare"
+          }
+        ]
+      },
+      {
+        "link": "/videos",
+        "label": "Videos",
+        "data": [
+          {
+            "link": "http://live.indiatimes.com/",
+            "label": "Live TV"
+          }
+        ]
+      },
+      {
+        "link": "/tv/hindi/tvhome/17781976.cms",
+        "label": "TV",
+        "data": [
+          {
+            "link": "/tv/news/hindi",
+            "label": "TV News"
+          },
+          {
+            "link": "/tv/tvlistings.cms",
+            "label": "TV Listings"
+          },
+          {
+            "link": "http://www.timesnow.tv/",
+            "label": "Times Now"
+          },
+          {
+            "link": "https://timesofindia.indiatimes.com/live-tv/et-now/video",
+            "label": "ET Now"
+          },
+          {
+            "link": "http://www.zoomtv.com/",
+            "label": "Zoom TV"
+          }
+        ]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "msid": "-2128932452",
+      "id": "city",
+      "label": "City",
+      "link": "/city",
+      "data": {
+        "type": "multi-list",
+        "sections": [
+          {
+            "label": "Metro Cities",
+            "list": [
+              {
+                "msid": "-2128838597",
+                "id": "mumbai",
+                "label": "Mumbai",
+                "link": "/city/mumbai"
+              },
+              {
+                "msid": "-2128839596",
+                "id": "delhi",
+                "label": "Delhi",
+                "link": "/city/delhi"
+              },
+              {
+                "msid": "-2128833038",
+                "id": "bengaluru",
+                "label": "Bengaluru",
+                "link": "/city/bangalore"
+              },
+              {
+                "msid": "-2128816011",
+                "id": "hyderabad",
+                "label": "Hyderabad",
+                "link": "/city/hyderabad"
+              },
+              {
+                "msid": "-2128830821",
+                "id": "kolkata",
+                "label": "Kolkata",
+                "link": "/city/kolkata"
+              },
+              {
+                "msid": "2950623",
+                "id": "chennai",
+                "label": "Chennai",
+                "link": "/city/chennai"
+              }
+            ]
+          },
+          {
+            "label": "Other Cities",
+            "list": [
+              {
+                "msid": "48264339",
+                "id": "agartala",
+                "label": "Agartala",
+                "link": "/city/agartala"
+              },
+              {
+                "msid": "36768514",
+                "id": "agra",
+                "label": "Agra",
+                "link": "/city/agra"
+              },
+              {
+                "msid": "52286624",
+                "id": "ajmer",
+                "label": "Ajmer",
+                "link": "/city/ajmer"
+              },
+              {
+                "msid": "54933186",
+                "id": "amaravati",
+                "label": "Amaravati",
+                "link": "/city/amaravati"
+              },
+              {
+                "msid": "-2128821153",
+                "id": "ahmedabad",
+                "label": "Ahmedabad",
+                "link": "/city/ahmedabad"
+              },
+              {
+                "msid": "3947060",
+                "id": "allahabad",
+                "label": "Allahabad",
+                "link": "/city/allahabad"
+              },
+              {
+                "msid": "48264748",
+                "id": "amritsar",
+                "label": "Amritsar",
+                "link": "/city/amritsar"
+              },
+              {
+                "msid": "17388722",
+                "id": "aurangabad",
+                "label": "Aurangabad",
+                "link": "/city/aurangabad"
+              },
+              {
+                "msid": "36768532",
+                "id": "bareilly",
+                "label": "Bareilly",
+                "link": "/city/bareilly"
+              },
+              {
+                "msid": "10744190",
+                "id": "bhopal",
+                "label": "Bhopal",
+                "link": "/city/bhopal"
+              },
+              {
+                "msid": "4118235",
+                "id": "bhubaneswar",
+                "label": "Bhubaneswar",
+                "link": "/city/bhubaneswar"
+              },
+              {
+                "msid": "-2128816762",
+                "id": "chandigarh",
+                "label": "Chandigarh",
+                "link": "/city/chandigarh"
+              },
+              {
+                "msid": "7503091",
+                "id": "coimbatore",
+                "label": "Coimbatore",
+                "link": "/city/coimbatore"
+              },
+              {
+                "msid": "48264818",
+                "id": "cuttack",
+                "label": "Cuttack",
+                "link": "/city/cuttack"
+              },
+              {
+                "msid": "36768551",
+                "id": "dehradun",
+                "label": "Dehradun",
+                "link": "/city/dehradun"
+              },
+              {
+                "msid": "48264804",
+                "id": "erode",
+                "label": "Erode",
+                "link": "/City/Erode"
+              },
+              {
+                "msid": "48264319",
+                "id": "faridabad",
+                "label": "Faridabad",
+                "link": "/city/faridabad"
+              },
+              {
+                "msid": "52040722",
+                "id": "ghaziabad",
+                "label": "Ghaziabad",
+                "link": "/city/ghaziabad"
+              },
+              {
+                "msid": "3012535",
+                "id": "goa",
+                "label": "Goa",
+                "link": "/city/goa"
+              },
+              {
+                "msid": "6547154",
+                "id": "gurgaon",
+                "label": "Gurgaon",
+                "link": "/city/gurgaon"
+              },
+              {
+                "msid": "4118215",
+                "id": "guwahati",
+                "label": "Guwahati",
+                "link": "/city/guwahati"
+              },
+              {
+                "msid": "3942695",
+                "id": "hubballi",
+                "label": "Hubballi",
+                "link": "/city/hubli"
+              },
+              {
+                "msid": "48264476",
+                "id": "imphal",
+                "label": "Imphal",
+                "link": "/city/imphal"
+              },
+              {
+                "msid": "9644624",
+                "id": "indore",
+                "label": "Indore",
+                "link": "/city/indore"
+              },
+              {
+                "msid": "52051580",
+                "id": "itanagar",
+                "label": "Itanagar",
+                "link": "/city/itanagar"
+              },
+              {
+                "msid": "3012544",
+                "id": "jaipur",
+                "label": "Jaipur",
+                "link": "/city/jaipur"
+              },
+              {
+                "msid": "48264118",
+                "id": "jammu",
+                "label": "Jammu",
+                "link": "/city/jammu"
+              },
+              {
+                "msid": "48264388",
+                "id": "jamshedpur",
+                "label": "Jamshedpur",
+                "link": "/city/jamshedpur"
+              },
+              {
+                "msid": "52286637",
+                "id": "jodhpur",
+                "label": "Jodhpur",
+                "link": "/city/jodhpur"
+              },
+              {
+                "msid": "3947067",
+                "id": "kanpur",
+                "label": "Kanpur",
+                "link": "/city/kanpur"
+              },
+              {
+                "msid": "9710057",
+                "id": "kochi",
+                "label": "Kochi",
+                "link": "/city/kochi"
+              },
+              {
+                "msid": "52287880",
+                "id": "kohima",
+                "label": "Kohima",
+                "link": "/city/kohima"
+              },
+              {
+                "msid": "22778873",
+                "id": "kolhapur",
+                "label": "Kolhapur",
+                "link": "/city/kolhapur"
+              },
+              {
+                "msid": "9710567",
+                "id": "kozhikode",
+                "label": "Kozhikode",
+                "link": "/city/kozhikode"
+              },
+              {
+                "msid": "-2128819658",
+                "id": "lucknow",
+                "label": "Lucknow",
+                "link": "/city/lucknow"
+              },
+              {
+                "msid": "3947051",
+                "id": "ludhiana",
+                "label": "Ludhiana",
+                "link": "/city/ludhiana"
+              },
+              {
+                "msid": "9632514",
+                "id": "madurai",
+                "label": "Madurai",
+                "link": "/city/madurai"
+              },
+              {
+                "msid": "3942690",
+                "id": "mangaluru",
+                "label": "Mangalore",
+                "link": "/city/mangalore"
+              },
+              {
+                "msid": "36768500",
+                "id": "meerut",
+                "label": "Meerut",
+                "link": "/city/meerut"
+              },
+              {
+                "msid": "3942693",
+                "id": "mysuru",
+                "label": "Mysore",
+                "link": "/city/mysore"
+              },
+              {
+                "msid": "442002",
+                "id": "nagpur",
+                "label": "Nagpur",
+                "link": "/city/nagpur"
+              },
+              {
+                "msid": "11459502",
+                "id": "nashik",
+                "label": "Nashik",
+                "link": "/city/nashik"
+              },
+              {
+                "msid": "22126655",
+                "id": "navi-mumbai",
+                "label": "Navi Mumbai",
+                "link": "/city/navi-Mumbai"
+              },
+              {
+                "msid": "8021716",
+                "id": "noida",
+                "label": "Noida",
+                "link": "/city/noida"
+              },
+              {
+                "msid": "-2128817995",
+                "id": "patna",
+                "label": "Patna",
+                "link": "/city/patna"
+              },
+              {
+                "msid": "22777916",
+                "id": "puducherry",
+                "label": "Puducherry",
+                "link": "/city/puducherry"
+              },
+              {
+                "msid": "-2128821991",
+                "id": "pune",
+                "label": "Pune",
+                "link": "/city/pune"
+              },
+              {
+                "msid": "17388717",
+                "id": "raipur",
+                "label": "Raipur",
+                "link": "/city/raipur"
+              },
+              {
+                "msid": "3942663",
+                "id": "rajkot",
+                "label": "Rajkot",
+                "link": "/city/rajkot"
+              },
+              {
+                "msid": "4118245",
+                "id": "ranchi",
+                "label": "Ranchi",
+                "link": "/city/ranchi"
+              },
+              {
+                "msid": "48264138",
+                "id": "srinagar",
+                "label": "Srinagar",
+                "link": "/city/srinagar"
+              },
+              {
+                "msid": "48263967",
+                "id": "salem",
+                "label": "Salem",
+                "link": "/city/Salem"
+              },
+              {
+                "msid": "48264067",
+                "id": "shillong",
+                "label": "Shillong",
+                "link": "/city/shillong"
+              },
+              {
+                "msid": "48264012",
+                "id": "shimla",
+                "label": "Shimla",
+                "link": "/city/shimla"
+              },
+              {
+                "msid": "3942660",
+                "id": "surat",
+                "label": "Surat",
+                "link": "/city/surat"
+              },
+              {
+                "msid": "3831863",
+                "id": "thane",
+                "label": "Thane",
+                "link": "/city/thane"
+              },
+              {
+                "msid": "22778270",
+                "id": "trichy",
+                "label": "Trichy",
+                "link": "/city/trichy"
+              },
+              {
+                "msid": "878156304",
+                "id": "thiruvananthapuram",
+                "label": "Thiruvananthapuram",
+                "link": "/city/thiruvananthapuram"
+              },
+              {
+                "msid": "53257854",
+                "id": "udaipur",
+                "label": "Udaipur",
+                "link": "/city/udaipur"
+              },
+              {
+                "msid": "3942666",
+                "id": "vadodara",
+                "label": "Vadodara",
+                "link": "/city/vadodara"
+              },
+              {
+                "msid": "3947071",
+                "id": "varanasi",
+                "label": "Varanasi",
+                "link": "/city/varanasi"
+              },
+              {
+                "msid": "47293740",
+                "id": "vijayawada",
+                "label": "Vijayawada",
+                "link": "/city/vijayawada"
+              },
+              {
+                "msid": "17388704",
+                "id": "visakhapatnam",
+                "label": "Visakhapatnam",
+                "link": "/city/visakhapatnam"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "msid": "48986328",
+      "id": "briefs",
+      "label": "Briefs",
+      "link": "/briefs"
+    },
+    {
+      "msid": "4440100",
+      "id": "india",
+      "label": "India",
+      "link": "/india"
+    },
+    {
+      "msid": "296589292",
+      "id": "world",
+      "label": "World",
+      "link": "/world"
+    },
+    {
+      "msid": "1898055",
+      "id": "business",
+      "label": "Business",
+      "link": "/business"
+    },
+    {
+      "msid": "4719148",
+      "id": "sports",
+      "label": "Sports",
+      "link": "/sports"
+    },
+    {
+      "msid": "33187923",
+      "id": "cricket",
+      "label": "Cricket",
+      "link":
+        "http://www.cricbuzz.com/?utm_source=TOInewHP_TILwidget&utm_medium=ABtest&utm_campaign=TOInewHP"
+    },
+    {
+      "msid": "1081479906",
+      "id": "entertainment",
+      "label": "Entertainment",
+      "link": "/etimes"
+    },
+    {
+      "msid": "5880659",
+      "id": "tech",
+      "label": "Tech",
+      "link":
+        "https://www.gadgetsnow.com?utm_source=toiweb&utm_medium=referral&utm_campaign=toiweb_hptopnav"
+    },
+    {
+      "msid": "2886704",
+      "id": "life",
+      "label": "Life & Style",
+      "link": "/life-style"
+    }
+  ]
+}

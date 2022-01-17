@@ -1,0 +1,118 @@
+{
+  "tn": "NewsListWithSubSections",
+  "name": "Entertainment",
+  "path": "/entertainment",
+  "subSections": [
+    {
+      "id": "hindi",
+      "name": "Hindi",
+      "path": "/entertainment/hindi"
+    },
+    {
+      "id": "tamil",
+      "name": "Tamil",
+      "active": true,
+      "path": "/entertainment/tamil"
+    }
+  ],
+  "data": [
+    {
+      "id": "70761732",
+      "hl":
+        "Tamil stories INX media case live: ED issues lookout circular against Chidambaram",
+      "dm": "t",
+      "upd": "1566368100000",
+      "lpt": "1566368110913",
+      "dl": "1566327840000",
+      "imageid": "70761732&imgsize=111046",
+      "type": "featured",
+      "wu":
+        "https://timesofindia.indiatimes.com/india/no-relief-for-chidambaram-in-inx-media-case-live-updates/liveblog/70761732.cms",
+      "primeid": ""
+    },
+    {
+      "id": "70763942",
+      "hl":
+        "Tamannaah Bhatia bedazzles in spectacular ethnic wear at teaser launch of Chiranjeevi's 'Sye Raa Narasimha Reddy'",
+      "dm": "toi",
+      "tn": "video",
+      "wu":
+        "https://timesofindia.indiatimes.com/videos/entertainment/hindi/tamannaah-bhatia-bedazzles-in-spectacular-ethnic-wear-at-teaser-launch-of-chiranjeevis-sye-raa-narasimha-reddy/videoshow/70763942.cms",
+      "su":
+        "https://timesofindia.indiatimes.com/videos/entertainment/hindi/tamannaah-bhatia-bedazzles-in-spectacular-ethnic-wear-at-teaser-launch-of-chiranjeevis-sye-raa-narasimha-reddy/videoshow/70763942.cms",
+      "dl": "1566357480000",
+      "du": "00:46",
+      "imageid": "70763942&imgsize=955621",
+      "views": "288",
+      "playerType": "slike",
+      "playerId": "1xnmhviokk",
+      "isspa": true
+    },
+    {
+      "upd": "1566296340000",
+      "lpt": "1566296371627",
+      "dl": "1566296340000",
+      "hl": "'I was targeted because of my social media status'",
+      "imageid": "70753636&imgsize=543396",
+      "tn": "photo",
+      "id": "70753142",
+      "wu":
+        "https://beautypageants.indiatimes.com/I-was-targeted-because-of-my-social-media-status/eventshow/70753142.cms"
+    },
+    {
+      "id": "56419667",
+      "hl": "Content Sentiment Photostory",
+      "dl": "1459826640005",
+      "upd": "1459845660006",
+      "imageid": "56419667",
+      "tn": "photostory",
+      "wu": "",
+      "dm": "t"
+    }
+  ],
+  "inserts": [
+    {
+      "id": "1-51396865-2",
+      "pos": 5,
+      "tn": "videolist",
+      "data": {
+        "items": [
+          {
+            "id": "70765952",
+            "hl":
+              "Jacqueline Fernandez looks breathtaking in latest Instagram post",
+            "dm": "toi",
+            "tn": "video",
+            "wu":
+              "https://timesofindia.indiatimes.com/videos/entertainment/hindi/jacqueline-fernandez-looks-breathtaking-in-latest-instagram-post/videoshow/70765952.cms",
+            "su":
+              "https://timesofindia.indiatimes.com/videos/entertainment/hindi/jacqueline-fernandez-looks-breathtaking-in-latest-instagram-post/videoshow/70765952.cms",
+            "dl": "1566366900000",
+            "du": "00:47",
+            "imageid": "70765952&imgsize=536906",
+            "views": "3",
+            "playerType": "slike",
+            "playerId": "1xnm5vmokk",
+            "type": "featured"
+          },
+          {
+            "id": "70765900",
+            "hl": "Sye Raa Narasimha Reddy - Hindi Official Teaser",
+            "dm": "toi",
+            "tn": "video",
+            "wu":
+              "https://timesofindia.indiatimes.com/videos/entertainment/hindi/sye-raa-narasimha-reddy-hindi-official-teaser/videoshow/70765900.cms",
+            "su":
+              "https://timesofindia.indiatimes.com/videos/entertainment/hindi/sye-raa-narasimha-reddy-hindi-official-teaser/videoshow/70765900.cms",
+            "dl": "1566366840000",
+            "du": "01:51",
+            "imageid": "70765900&imgsize=258645",
+            "views": "1",
+            "playerType": "youtube",
+            "playerId": "XBWuSbQOTgU"
+          }
+        ]
+      }
+    }
+  ]
+}

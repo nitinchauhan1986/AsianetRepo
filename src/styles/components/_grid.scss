@@ -1,0 +1,49 @@
+@mixin grid_colum($type) {
+  @for $i from 1 through 12 {
+    .col_#{$type}_#{$i} {
+      max-width: percentage($i/12);
+      flex: 0 0 percentage($i/12);
+    }
+  }
+}
+
+// .order_#{$type}_#{$i} {
+//   order: $i;
+// }
+//Sample
+// .col_#{$type}_1 {
+//   width: percentage(1/12);
+// }
+
+:global {
+  .grid_wrapper,
+  .row {
+    margin: 0 -16px;
+    @include flexbox();
+    @include flexwrap();
+    @include grid_colum(l);
+
+    @include tablet-portrait {
+      @include grid_colum(m);
+
+      .hide_m {
+        display: none !important;
+      }
+    }
+
+    @include mobile {
+      @include grid_colum(sm);
+    }
+
+    > [class*='col'] {
+      padding-right: 16px;
+      padding-left: 16px;
+      width: 100%;
+    }
+
+    .push_m_6 {
+      margin-left: 50%;
+      margin-top: -340px;
+    }
+  }
+}

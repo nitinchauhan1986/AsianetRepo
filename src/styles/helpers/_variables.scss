@@ -1,0 +1,118 @@
+// Common Variables Settings
+
+$orange-color-theme: #e8a401;
+$rust-color-theme: #cc232a;
+$blue-color-theme: #0270df;
+$viking-color-theme: #24b6a2;
+$citrus-color-theme: #00b56f;
+$legacy-color-theme: #be2819;
+$new-rust-color-theme: #e21b22;
+
+$L2nav-width: 180px;
+$wrapper-width: 1168px;
+$wrapper-width-small: 1000px;
+$wrapper-width-medium: 1000px;
+$primary-color: #333;
+$primary-link-color: #2d80fe;
+$primary-font: arial,
+sans-serif;
+$primary-font-size: 1.2em;
+$primary-line-height: 1.6em;
+$primary-font-weight: 400;
+$semibold-font-weight: 600;
+$bold-font-weight: 700;
+$extra-bold-font-weight: 900;
+$main-content-width: 74%;
+$sidebar-width: 26%;
+$h1-font-size: 3em;
+$h2-font-size: 2em;
+$h3-font-size: 1.5em;
+$georgia-font: georgia,
+serif;
+$roboto-font: roboto,
+Montserrat,
+sans-serif,
+;
+$Montserrat: Montserrat,
+Verdana,
+arial,
+sans-serif;
+$proximanova: proximanova,
+Montserrat,
+Verdana,
+arial,
+sans-serif;
+$ProximaEtimes: proximanova,
+Calibri,
+Verdana,
+arial,
+sans-serif;
+
+
+$black: var(--primary-dark-color);
+$black-rgba: var(--primary-dark-color-rgba);
+$black1: var(--primary-dark-color);
+$lightblack: #222;
+$white: var(--white-color);
+$white-rgba: var(--white-color-rgba);
+$offwhite: var(--offwhite-color);
+$lightgray: #999;
+$gray: #ccc;
+
+$text-gray: #666;
+$text-black: var(--primary-dark-color);
+$text-darkgray: #333;
+$text-lightgray: #999;
+$text-white: var(--white-color);
+$text-darkgray1: #4a4a4a;
+$text-red: #c00;
+$text-blue: #3ca2c8;
+$georgia: georgia,
+arial,
+sans-serif;
+$fb: #3a5795;
+$twit: #55acee;
+$pinterest: #bd081c;
+$linkedin: #0177b5;
+$whatsapp: #25d366;
+$mail: #ff6e00;
+$gplus: #dd4b39;
+$paytm: #ff9f01;
+$paytmborder: #bc7600;
+$toired: #d0373c;
+$nicred: #de6c74;
+$sports: #35ab3b;
+$sports-active: #249529;
+$text-lightgray1: #a0a0a0;
+$graynew : #595959;
+
+//--- Videos Page Specific ---//
+$videos-color: #c2382b;
+$videos-color-theme: #f14848;
+$videos-color-theme-mobile: #c33;
+$videos-title-color: #be281a;
+$videos-bg-color: #be281a;
+
+$red_bg: #e21b22;
+$red_bg2: #e51615;
+$red_text: #e80f00;
+
+$toi_red: #e21b22;
+$ETimes_red: #f44142;
+
+$grey_color:var(--border-color);
+
+//--- These color's used in New LB Specific ---//
+$black1: var(--primary-dark-color);
+$lb_borderColor: var(--border-color);
+$col2_leftMargin: 85px;
+$border_color: #a5a5a5;
+
+$card_listfontsize : calc(15px + 3 * (100vw - 320px) / (800 - 320));
+$card_listlineheight : calc(22px + 4 * (100vw - 320px) / (800 - 320));
+
+$card_leadfontsize : calc(18px + 4 * (100vw - 320px) / (800 - 320));
+$card_leadlineheight : calc(24px + 4 * (100vw - 320px) / (800 - 320));
+
+// height will be the same in open app topheader
+$openappheight: 48px;

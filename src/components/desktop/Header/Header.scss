@@ -1,0 +1,68 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.mobile{
+  display: flex;
+  align-items: center;
+  nav{
+    width: 24px;
+    height: 23px;
+    margin: 0 10px;
+    @include us-home-sprite(-16px , -1509px);
+  }
+  .header_right{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    .logo{
+      margin: 10px;
+      width: 32px;
+      height: 32px;
+      @include us-home-sprite(-16px, -13px)
+    ;}
+    .search{
+      margin-left:auto;
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      @include us-home-sprite(-16px, -68px);
+
+    }
+  }
+}
+.l2_navigation{
+  margin:0px;
+  ul{
+    @include flexbox();
+    li{
+      margin: 0px;
+      justify-content: space-between;
+    }
+  }
+}
+
+.header-container{
+  .top_area{
+    background: rgba(0,0,0,.85);
+    height: 30px;
+    display: flex;
+    .headertext{
+      color: $white;
+    }
+  }
+  .column{
+    width: 50%;
+  }
+  nav{
+    background: $black;
+    height: 40px;
+  }
+}
+
+:global(.bgImg:not(.gutter)) {
+  .header {
+    :global(.contentwrapper) {
+        max-width: $wrapper-width;
+      }
+  }
+}

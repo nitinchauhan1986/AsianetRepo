@@ -1,0 +1,223 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.mobile {
+
+  //margin-bottom: 7px;
+  &.sticky {
+    height: 40px;
+    position: relative;
+    z-index: 102;
+
+    .headerwrapper {
+      position: fixed;
+      z-index: 101;
+      width: 100%;
+      top: -52px;
+      @include transition(all 0.3s);
+    }
+  }
+
+  &.fixHeader .headerwrapper {
+    top: 0;
+  }
+
+  .headerwrapper {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ececec;
+    max-height: 40px;
+    background-color: $white;
+
+    &:not(.noImg) {
+      background: #fff url(https://static.toiimg.com/photo/77144633.cms) no-repeat center;
+      background-size: 152px;
+    }
+
+    &.dark {
+      .hamburger {
+        filter: invert(1);
+      }
+    }
+
+    &.dark,
+    &.light {
+      .header_right {
+        .logo {
+          background: none;
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    min-width: 24px;
+    height: 16px;
+    margin: 0 16px;
+    @include us-home-sprite(-16px -1511px);
+    filter: var(--invert);
+  }
+
+  .header_right {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: space-between;
+
+    .fulllogo {
+      margin: 10px;
+      width: 32px;
+      height: 32px;
+      @include us-home-sprite(-16px, -13px);
+
+      a {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+
+      &.snowwhite {
+        background: none;
+        // width: 152px;
+        // background-size: 100%;
+        // height: 12px;
+        // margin: 14px auto;
+      }
+    }
+
+    .logo {
+      margin: 10px;
+      width: 32px;
+      height: 32px;
+      @include us-home-sprite(-16px, -13px);
+
+      a {
+        height: 100%;
+        width: 100%;
+        display: block;
+      }
+
+      &.snowwhite {
+        background: url(https://static.toiimg.com/photo/77144633.cms) no-repeat left center;
+        // @include mobile-icons(-15px -1196px);
+        // background-image: url(https://static.toiimg.com/photo/77144633.cms);
+        // width: 32px;
+        width: 152px;
+        background-size: 100%;
+        // height: 14px;
+        // margin: 12px 0;
+      }
+    }
+
+    .snowwhite {
+      width: 88%;
+    }
+
+    .header_right_inner {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.stickyHeader {
+  position: fixed;
+  top: 47px;
+  width: 100%;
+  z-index: 10;
+  // border-bottom: 1px solid #ececec;
+}
+
+.stickyHeaderZero {
+  top: 0;
+}
+
+.l2_navigation_wrapper {
+  height: 40px;
+
+  .l2_navigation {
+    background: $white;
+    padding-top: 10px;
+
+    ul {
+      @include flexbox();
+      overflow: auto;
+      white-space: nowrap;
+
+      li {
+        text-align: center;
+
+        a {
+          font: normal 12px/16px $Montserrat;
+          color: $text-black;
+          padding: 0 0 10px;
+          display: block;
+          text-transform: uppercase;
+
+          &.active {
+            font-weight: bold;
+            box-shadow: inset 0px -3px 0px 0px $black;
+          }
+        }
+      }
+    }
+  }
+
+  &.snowwhite {
+    height: 32px;
+
+    .l2_navigation {
+      // border: solid #ececec;
+      // border-width: 1px 0;
+      padding-top: 0px;
+      height: 32px;
+
+      ul {
+        li a {
+          padding: 8px 16px;
+
+          &.active {
+            box-shadow: inset 0px -4px 0px 0px #e21b22;
+            font-weight: 600;
+            color: #e21b22;
+          }
+
+          &.toiplus {
+            @include mobile-icons(-12px -1022px);
+            width: 36px;
+            height: 17px;
+            display: inline-block;
+            margin: 6px 8px 0px;
+            background-size: 120px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.AmzTopDeals {
+  min-width: 60px;
+  margin-right: 15px;
+
+  >a {
+    color: $toi_red;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+
+.topband {
+  margin: 0 auto;
+  text-align: center;
+}
+
+:global(.toiplusplanpage) {
+  .mobile {
+    .headerwrapper {
+      background: $white;
+    }
+  }
+}

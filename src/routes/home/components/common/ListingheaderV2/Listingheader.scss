@@ -1,0 +1,533 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.subheading {
+  display: block;
+  font: 500 10px/12px $Montserrat;
+  color: #595959;
+  margin-top: 4px;
+}
+
+:global(.grid_wrapper_heading) {
+  .heading {
+    padding-left: 16px;
+  }
+}
+
+.header {
+
+  //background: $white;
+  @include mobile {
+    padding: 20px 16px 12px;
+  }
+
+  @include no-mobile {
+    margin-bottom: 20px;
+    flex: 0 0 100%;
+
+    &.small {
+      margin-bottom: 20px;
+
+      .heading {
+        font-size: 14px;
+
+        a {
+          font-size: 14px;
+          padding-right: 16px;
+
+          &.linkarrow::after {
+            top: 40%;
+            @include transform(rotate(45deg) scale(0.7) translateY(-50%));
+            right: 4px;
+          }
+
+          &.arrowalign::after {
+            top: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  @include align-items-center();
+  @include flexbox();
+  @include justify-content-between;
+
+  @media screen and (max-width: 1260px) {
+    &:global(.multiline) {
+      .heading {
+        .linkarrow {
+          word-spacing: 99999px;
+          display: block;
+          line-height: 16px;
+
+          &:after {
+            position: relative;
+            display: inline-block;
+            top: 2px !important;
+            left: 0px;
+          }
+        }
+      }
+    }
+  }
+
+
+  &:not(.themewhite) {
+    @include mobile {
+      background: $white;
+    }
+  }
+
+  .heading {
+    font: 700 16px/24px $Montserrat;
+    text-transform: uppercase;
+    color: $text-black;
+    // @include line-clamp(1);
+
+    @include no-mobile {
+      font-size: 20px;
+      overflow: hidden;
+
+      a {
+        color: inherit;
+        position: relative;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+
+        &.linkarrow::after {
+          content: '';
+          @include transform(translateY(-50%) rotate(45deg));
+          @include linkarrow-props();
+        }
+
+        &.arrowalign::after {
+          top: 12px;
+        }
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  // Black over White Text
+  &.themewhite {
+    .heading {
+      color: $white;
+
+      a {
+        &.linkarrow:after {
+          border-color: $white;
+        }
+      }
+    }
+  }
+}
+
+// .loading {
+//   height: 3px;
+//   width: 100%;
+//   position: relative;
+//   overflow: hidden;
+//   background-color: #ddd
+// }
+.loading {
+  position: relative;
+}
+
+.loading:before {
+  display: block;
+  position: absolute;
+  content: '';
+  left: -200px;
+  width: 200px;
+  height: 3px;
+  -webkit-animation: load 2s linear infinite;
+  animation: load 2s linear infinite;
+  border-radius: 50%;
+  background-color: #be3128;
+  bottom: -1px;
+}
+
+@keyframes load {
+  0% {
+    left: -200px;
+    width: 30%;
+  }
+
+  50% {
+    width: 30%;
+  }
+
+  70% {
+    width: 70%;
+  }
+
+  80% {
+    left: 50%;
+  }
+
+  95% {
+    left: 120%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}
+
+// CityDrop Down
+.Overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
+}
+
+.citybloacker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .citybloacker_cont {
+    color: #000;
+    width: 800px;
+    height: 521px;
+    @include border-radius(8px);
+    box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+
+    @include tablet {
+      width: 96%;
+    }
+
+    .searchbox {
+      width: 300px;
+      height: 32px;
+      font: 600 12px/16px $Montserrat;
+      color: #595959;
+      @include border-radius(4px);
+      border: solid 1px #ececec;
+      background-color: #f6f6f6;
+      position: relative;
+      padding: 0 28px 0 12px;
+    }
+
+    .search_icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      position: absolute;
+      right: 12px;
+      z-index: 500;
+      @include us-home-sprite(-34px -60px);
+      // background: url(https://static.toiimg.com/photo/76771367.cms);
+      filter: invert(1);
+      -webkit-filter: invert(1);
+      -moz-filter: invert(1);
+      top: 0px;
+      border: none;
+    }
+
+    .title_search {
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .title {
+        font: 700 14px/20px $Montserrat;
+        text-transform: uppercase;
+      }
+
+      .search {
+        form {
+          position: relative;
+        }
+      }
+
+      .current_city {
+        font: 10px/16px $Montserrat;
+        color: #595959;
+        text-transform: uppercase;
+
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .atoz {
+      border-top: 1px solid #ececec;
+      border-bottom: 1px solid #ececec;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ul {
+        counter-reset: listStyle;
+
+        li {
+          display: inline-block;
+          margin: 0 8px;
+
+          a {
+            counter-increment: listStyle;
+            font: 700 14px/20px $Montserrat;
+            color: #000;
+
+            &::before {
+              content: counter(listStyle, lower-alpha);
+            }
+          }
+        }
+      }
+    }
+
+    .alpha_content {
+      padding: 22px 16px 16px 32px;
+
+      .alphacont_wrapper {
+        height: 280px;
+        overflow-y: scroll;
+      }
+
+      .data_alpha {
+        counter-increment: listStyle;
+        position: relative;
+        margin-bottom: 18px;
+        padding-top: 24px;
+
+        a {
+          font: 500 12px/16px $Montserrat;
+          color: #000;
+          margin-bottom: 8px;
+          display: inline-block;
+          width: 25%;
+          padding-right: 16px;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          position: relative;
+
+          &.active::after {
+            content: '\2713';
+            color: #fff;
+            text-align: center;
+            margin-left: 12px;
+            right: 16px;
+            top: 0px;
+            height: 16px;
+            width: 16px;
+            background: #000;
+            @include border-radius(50%);
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding;
+            background-clip: padding-box;
+            display: inline-block;
+            position: static;
+          }
+        }
+
+        &::before {
+          content: attr(data-letter);
+          color: #000;
+          position: absolute;
+          left: 0px;
+          top: -4px;
+          font: 700 14px/18px $Montserrat;
+          @include border-radius(100%);
+          -webkit-background-clip: padding-box;
+          -moz-background-clip: padding;
+          background-clip: padding-box;
+        }
+      }
+    }
+
+    .action_bottom {
+      border-top: 1px solid rgba(0, 0, 0, 0.16);
+      padding-top: 12px;
+      text-align: center;
+      position: relative;
+
+      .action_btn {
+        width: 80%;
+        margin: 0 auto;
+
+        @include tablet {
+          width: 90%;
+        }
+
+        .btns {
+          top: 40px;
+          position: absolute;
+          width: inherit;
+          text-align: center;
+
+          button {
+            @include border-radius(4px);
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding;
+            background-clip: padding-box;
+            padding: 0 40px;
+            min-width: 140px;
+            height: 32px;
+            background-color: #e21b22;
+            border: 1px solid #e21b22;
+            font: 700 12px/30px Montserrat, Verdana, arial, sans-serif;
+            display: block;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            margin: 0 4px;
+            display: inline-block;
+
+            &.plain {
+              background-color: #fff;
+              color: #e21b22;
+            }
+
+            &.disabled,
+            :disabled {
+              background-color: #ccc;
+              border-color: #ccc;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .action_bottom [type='radio']:checked,
+  [type='radio']:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .action_bottom [type='radio']:checked+label,
+  .action_bottom [type='radio']:not(:checked)+label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    font: 12px/16px $Montserrat;
+    color: #595959;
+    text-transform: initial;
+
+    span {
+      color: #000;
+      font-weight: 500;
+    }
+  }
+
+  .action_bottom [type='radio']:checked+label:before,
+  .action_bottom [type='radio']:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000;
+    @include border-radius(100%);
+    background: #fff;
+  }
+
+  .action_bottom [type='radio']:checked+label:after,
+  .action_bottom [type='radio']:not(:checked)+label:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #000;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    @include border-radius(100%);
+    @include transition(all 0.2s ease);
+  }
+
+  .action_bottom [type='radio']:not(:checked)+label:after {
+    opacity: 0;
+    @include transform(scale(0));
+  }
+
+  .action_bottom [type='radio']:checked+label:after {
+    opacity: 1;
+    @include transform(scale(1));
+  }
+
+  /* Let's get this party started */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @include border-radius(4px);
+    background: #ececec;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @include border-radius(4px);
+    background: #000;
+  }
+
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 0, 0, 0.4);
+  }
+}
+
+:global {
+  .mic {
+    h2 {
+      a {
+        padding-right: 38px !important;
+        min-height: 25px;
+
+        &::before {
+          @include us-home-sprite(-24px -451px);
+          width: 41%;
+          display: inline-block;
+          content: '';
+          position: absolute;
+          height: 40px;
+          right: -35px;
+          top: -13px;
+        }
+      }
+    }
+  }
+}
+
+:global(.bgImg) {
+  @media screen and (min-width: 1260px) and (max-width: 1420px) {
+    :global(.multiline) {
+      .heading {
+        .linkarrow {
+          word-spacing: 99999px;
+          display: block;
+          line-height: 16px;
+
+          &:after {
+            position: relative;
+            display: inline-block;
+            top: 2px !important;
+            left: 0px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,278 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.lbheading {
+  font-size: 16px;
+  line-height: 24px;
+  color: $black1;
+  font-weight: 700;
+  margin-bottom: 16px;
+  @include line-clamp(3);
+
+  @include no-mobile {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.lbContentscrollcontent {
+  height: 240px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 20px;
+
+  &:before {
+    content: '';
+    border-left: 1px solid $lb_borderColor;
+    width: 1px;
+    height: 240px;
+    position: absolute;
+    left: 4px;
+
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    padding: 0;
+    border-radius: 4px;
+    background: #ececec;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: $black1;
+    width: 0px;
+    padding: 0;
+  }
+
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background: #e2e2e2;
+  }
+
+  .lbContent {
+    &:first-child {
+      .content {
+        padding-top: 0;
+      }
+    }
+
+    &:last-child {
+      .content {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.liveblog {
+  position: relative;
+
+  @include mobile {
+    // margin-left: 16px;
+  }
+
+  .blinker {
+    align-items: center;
+    margin-bottom: 10px;
+    @include flexbox;
+    @include lbBlinker(false, red, inherit, 0px, -10px);
+
+    // @include mobile {
+    //   position: absolute;
+    //   left: -30px;
+    //   top: 13px;
+    // }
+
+    .liveBtn {
+      position: relative !important;
+
+      &.red {
+        @include no-mobile {
+          left: -10px;
+        }
+      }
+    }
+
+    >span {
+      margin-left: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: $toi_red;
+    }
+  }
+
+  &:not(.electionTheme) {
+    .blinker {
+      .liveBtn.red {
+        @include mobile {
+          left: -8px;
+          top: -10px;
+        }
+      }
+    }
+  }
+
+  &.electionTheme {
+    border-top: 1px solid #ececec;
+    padding: 20px 0;
+
+    @include no-mobile {
+      border-bottom: 1px solid #ececec;
+      margin-top: 16px;
+    }
+
+    @include mobile {
+      padding: 16px 16px 4px 40px;
+      margin: 16px -16px 0;
+    }
+
+    .blinker {
+      position: absolute;
+      top: 30px;
+      left: 8px;
+
+      @include no-mobile {
+        left: 0;
+        top: 32px;
+      }
+    }
+
+    .lbheading {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 500;
+      margin-bottom: 8px;
+
+      @include no-mobile {
+        padding-left: 16px;
+        min-height: 72px;
+      }
+    }
+
+    .moreupdate {
+      border-left: 0;
+      margin-left: 0;
+
+      @include no-mobile {
+        padding: 0 0 0 16px;
+      }
+    }
+  }
+
+  &.LBnotactive {
+    &.electionTheme {
+      @include mobile {
+        padding-left: 16px;
+      }
+
+      .lbheading,
+      .moreupdate {
+        padding-left: 0px;
+      }
+    }
+  }
+}
+
+.lbContent {
+  // margin-top: 16px;
+  overflow: auto;
+  max-height: 160px;
+
+  @include no-mobile {
+    margin-left: -4px;
+    padding-left: 8px;
+  }
+}
+
+.content {
+  border-left: 1px solid $lb_borderColor;
+  border-bottom: 1px solid $lb_borderColor;
+  padding: 16px 0px 16px 20px;
+  color: $black1;
+  font: 400 12px/16px $Montserrat;
+
+  &:not(:first-of-type) {
+    border-top: 1px solid $lb_borderColor;
+    padding-top: 16px;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+    @include line-clamp(3);
+  }
+}
+
+.time {
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: $toi_red;
+    position: absolute;
+    left: -25px;
+    top: 2px;
+    @include border-radius(10px);
+  }
+
+  @include no-mobile {
+    span {
+      font-weight: 500;
+    }
+  }
+}
+
+.moreupdate {
+  font: 500 12px/16px $Montserrat;
+  text-transform: uppercase;
+
+  @include mobile {
+    font-weight: 600;
+    margin-top: 8px;
+  }
+
+  @include no-mobile {
+    margin-left: 4px;
+    border-left: 1px solid $lb_borderColor;
+    padding: 10px 0 0 20px;
+  }
+
+  a {
+    color: $toi_red;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border: solid $toi_red;
+      border-width: 0 1px 1px 0;
+      margin: -1px 0 0 3px;
+      vertical-align: middle;
+      @include transform(rotate(-45deg));
+    }
+  }
+}
+
+:global(.exitPollRHS),
+:global(.resultRHS),
+:global(.ASElectionInsert),
+:global(.LBElectionInsert) {
+  .blinker {
+    margin-bottom: 4px;
+  }
+
+  .lbheading {
+    margin-bottom: 12px;
+  }
+}

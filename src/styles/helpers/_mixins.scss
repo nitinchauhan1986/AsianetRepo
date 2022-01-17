@@ -1,0 +1,745 @@
+@mixin border-bottom {
+  border-bottom: 1px dotted #a5a5a5;
+}
+
+@mixin border-top {
+  border-top: 1px dotted #a5a5a5;
+}
+
+@mixin border-right {
+  border-right: 1px dotted #a5a5a5;
+}
+
+@mixin border-left {
+  border-left: 1px dotted #a5a5a5;
+}
+
+@mixin mozonly {
+  @supports (-moz-appearance: none) {
+    @content;
+  }
+}
+
+@mixin ieonly {
+  //@media screen and (min-width:0\0) and (min-resolution: +72dpi) { This is for IE9 And Above
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $top $left $blur $color;
+    -moz-box-shadow: inset $top $left $blur $color;
+    box-shadow: inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+// Example:-
+// @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.2));
+
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+
+  @if $orientation=='vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation=='horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(
+      center,
+      ellipse cover,
+      $start-color,
+      $end-color
+    );
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+//gradient
+//  @include gradient(#07c, #06f, vertical/horizontal);
+//
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+//Usage:
+// .article { @include clearfix(); }
+
+// Clamping
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+//Usage:
+// @include line-clamp(3);
+
+// Transitions
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// Animation
+@mixin animation($args...) {
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -ms-animation: $args;
+  -o-animation: $args;
+  animation: $args;
+}
+
+// Example:-
+// @include transition(arguments1, arguments2, etc);
+
+// Transform
+@mixin transform($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+// Example:-
+// @include transform(arguments1, arguments2, etc);
+
+//Opacity
+@mixin Opacity($value) {
+  $IEValue: $value * 100;
+  opacity: $value;
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")';
+  filter: alpha(opacity=$IEValue);
+}
+
+@mixin border-radius($value: 3px) {
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+  border-radius: $value;
+
+  // keeps background from busting out of border
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+//boxsizing
+@mixin boxsizing() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin columngap($value) {
+  -webkit-column-gap: $value;
+  -moz-column-gap: $value;
+  column-gap: $value;
+}
+
+//backface-visibility
+@mixin backface-visibility($args...) {
+  -webkit-backface-visibility: $args;
+  backface-visibility: $args;
+}
+
+//  Flexbox
+@mixin flexbox() {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+//  Flexbox
+@mixin flexwrap() {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+//  Flex Direction Column
+@mixin flex-direction-column() {
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+}
+
+// Space between
+@mixin justify-content-between() {
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+}
+
+// Content End
+@mixin justify-content-end() {
+  -ms-flex-pack: end !important;
+  justify-content: flex-end !important;
+}
+
+@mixin justify-content-start() {
+  -ms-flex-pack: start !important;
+  justify-content: flex-start !important;
+}
+
+// Content Center
+@mixin justify-content-center() {
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+}
+
+// Content Around
+@mixin justify-content-around {
+  -ms-flex-pack: distribute !important;
+  justify-content: space-around !important;
+}
+
+// Align Items Center
+@mixin align-items-center {
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+// Align Items Center
+@mixin align-items-start {
+  -ms-flex-align: start !important;
+  align-items: flex-start !important;
+}
+
+// Align Items Center
+@mixin align-items-end {
+  -ms-flex-align: end !important;
+  align-items: flex-end !important;
+}
+
+//We use this for creating scalable elements (usually images / background images) that maintain a ratio.
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: '';
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
+
+// Links arrow properties
+@mixin linkarrow-props {
+  width: 10px;
+  height: 10px;
+  border: solid $black1;
+  border-width: 2px 2px 0 0;
+  position: absolute;
+  top: 50%;
+  right: 2px;
+}
+
+// Media Query
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$largedesktop-width: 1260px;
+$xldesktop-width: 1280px;
+$xxldesktop-width: 1420px;
+
+@mixin tablet {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin only-landscape {
+  @media screen and (orientation: landscape) and (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin only-desktop {
+  @media screen and (min-width: #{$desktop-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin no-desktop {
+  @media screen and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin large-desktop-max {
+  @media screen and (max-width: #{$largedesktop-width}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media screen and (min-width: #{$largedesktop-width}) {
+    @content;
+  }
+}
+
+@mixin xl-desktop {
+  @media screen and (min-width: #{$xldesktop-width}) {
+    @content;
+  }
+}
+
+@mixin xl-desktop-as {
+  @media screen and (min-width: #{$xldesktop-width  + 70px}) and (max-width: #{$xxldesktop-width}) {
+    @content;
+  }
+}
+
+@mixin xxl-desktop {
+  @media screen and (max-width: #{$xxldesktop-width}) {
+    @content;
+  }
+}
+
+@mixin xxl-desktop-plus {
+  @media screen and (min-width: #{$xxldesktop-width + 1px}) {
+    @content;
+  }
+}
+
+@mixin no-mobile {
+  @media screen and (min-width: #{$tablet-width}) and (orientation: portrait),
+    screen and (min-width: 999px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: #{$tablet-width - 1px}),
+    screen and (orientation: landscape) and (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin mobile-portrait {
+  @media screen and (max-width: #{$tablet-width - 1px}) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin mobile-landscape {
+  @media screen and (max-width: 900px) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin us-home-sprite($positionX: null, $positionY: null) {
+  /* 07dec- 76771367,76319476 ,74062464 - change 11June 2020 ,70853564 ,70956794, 71110722, 71149118 71183202, 79602966  */
+  background-image: url(https://static.toiimg.com/photo/82540618.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin mobile-icons($positionX: null, $positionY: null) {
+  /*78495515 78875515, 82325062 - 28 June 2021, 84400092 - 14 July 2021*/
+  // 84400092 changed for Cryptocurrency ZebPay 18 August 2021
+  background-image: url(https://static.toiimg.com/photo/85424326.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+/* 72279021 */
+@mixin tp-sprite($positionX: null, $positionY: null) {
+  background-image: url(https://static.toiimg.com/photo/75207857.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin articleshiow-v2-sprite($positionX: null, $positionY: null) {
+  /*73069655, 72038171 , 70853564 ,70956794, 71110722, 71149118, 73731440, 74320556, 76731066*/
+  background-image: url(https://static.toiimg.com/photo/86191063.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin social_sharing($positionX: null, $positionY: null) {
+  background-image: url(https://static.toiimg.com/photo/83712786.cms); // old icon - 76848790, 78054549 , 82682463
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin flag-sprite($positionX : null, $positionY : null) {
+  background-image: url(https://static.toiimg.com/photo/81648097.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin corona-sprite($positionX : null, $positionY : null) {
+  background-image: url(https://static.toiimg.com/photo/74612995.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin maskindia-sprite($positionX : null, $positionY : null) {
+  background-image: url(https://static.toiimg.com/photo/74997582.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin concert-sprite($positionX : null, $positionY : null) {
+  // 76134147
+  background-image: url(https://static.toiimg.com/photo/76137810.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin toiPlus_sprite($positionX : null, $positionY : null) {
+  background-image: url(https://static.toiimg.com/photo/69822060.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin fuel_sprite($positionX : null, $positionY : null) {
+  background-image: url(https://static.toiimg.com/photo/83334206.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+@mixin swipe_activated {
+  white-space: nowrap;
+  overflow: auto;
+}
+
+// Common double border styling using in multiple Components
+@mixin doubledotHeading() {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > i {
+    display: block;
+    height: 3px;
+    border: dotted #333;
+    border-width: 1px 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+
+  > span {
+    position: relative;
+    background: #fff;
+    padding: 2px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+}
+
+// Common double border styling using in multiple Components End
+
+@mixin fade-in($fadeVal) {
+  animation: fade-in $fadeVal;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin plusToolTip($duration, $count, $bgcolor, $textcolor, $height, $iconrequired: null) {
+  position: relative;
+  height: $height;
+  @include flexbox;
+  justify-content: center;
+
+  .plusToolTip {
+    animation-name: tooltipanimation;
+    animation-duration: $duration;
+    animation-iteration-count: $count;
+    position: absolute;
+    background-color: $bgcolor;
+    color: $textcolor;
+    padding: 4px 8px;
+    @include border-radius(4px);
+    @include flexbox;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      border-style: solid;
+      border-width: 10px 10px 0;
+      border-color: $bgcolor transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      margin-left: -10px;
+    }
+
+    b,
+    strong {
+      font-weight: 700;
+      margin: 0 1px;
+    }
+
+    @if $iconrequired==iconrequired {
+      &:before {
+        content: '';
+        @include us-home-sprite(-13px -1399px);
+        width: 18px;
+        height: 16px;
+        margin-right: 5px;
+        background-size: 440px;
+      }
+    }
+  }
+
+  @keyframes tooltipanimation {
+    0% {
+      top: 0;
+    }
+
+    50% {
+      top: -5px;
+    }
+
+    100% {
+      top: 0;
+    }
+  }
+}
+
+@mixin blackHover() {
+  color: $black;
+  @include transition(all 0.3s ease-in);
+
+  &:hover {
+    color: $graynew;
+  }
+}
+
+@mixin prime-hooks($positionX : null, $positionY : null, $value : 0) {
+  background-image: url(https://static.toiimg.com/photo/69822060.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+
+  @if $value==1 {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 60px;
+    right: 0px;
+    top: 0px;
+    background-size: 130px;
+  }
+}
+
+@mixin animationhover() {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.2);
+    transition: all 0.3s;
+    z-index: -1;
+    @include border-radius(4px);
+  }
+
+  &:hover {
+    &:before {
+      width: 100%;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #e21b22;
+    left: 0px;
+    top: 0px;
+    z-index: -2;
+    @include border-radius(4px);
+  }
+}
+
+@mixin lbBlinker($bgcolor:null, $class:null, $right:null, $left:null, $top:null) {
+  @keyframes gogoloader {
+    0% {
+      -webkit-transform: scale(0);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+  @-webkit-keyframes gogoloader {
+    0% {
+      -webkit-transform: scale(0);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+  @-moz-keyframes gogoloader {
+    0% {
+      -webkit-transform: scale(0);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+      opacity: 0;
+    }
+  }
+
+  .liveBtn {
+    @if $bgcolor {
+      &:not(.red) {
+        background: $new-rust-color-theme;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 700;
+        text-decoration: none;
+        padding: 4px 8px 4px 24px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        z-index: 1;
+        @include border-radius(4px);
+      }
+    }
+
+    &:before,
+    &:after {
+      opacity: 0;
+      box-sizing: border-box;
+      content: '\0020';
+      position: absolute;
+      top: 4px;
+      left: 8px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px #fff, inset 0 0 10px #fff;
+      @include border-radius(100px);
+    }
+
+    &:before {
+      z-index: 2;
+      -webkit-animation: gogoloader 2s infinite;
+      -moz-animation: gogoloader 2s infinite;
+      animation: gogoloader 2s infinite;
+    }
+
+    &:after {
+      z-index: 1;
+      -webkit-animation: gogoloader 2s infinite 1s;
+      -moz-animation: gogoloader 2s infinite 1s;
+      animation: gogoloader 2s infinite 1s;
+    }
+
+    @if $class='red' {
+      &.red {
+        position: absolute;
+        right: $right;
+        left: $left;
+        top: $top;
+
+        &:before,
+        &:after {
+          border: 2px solid #e21b22;
+          box-shadow: 0 0 10px #e21b22, inset 0 0 10px #e21b22;
+        }
+      }
+    }
+  }
+}
+
+@mixin etimes-sprite($positionX: null, $positionY: null) {
+  background-image: url(https://static.toiimg.com/photo/83336010.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}

@@ -1,0 +1,119 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.footer_container {
+  background: $offwhite;
+  padding: 20px 16px 12px;
+  margin-bottom: 48px;
+
+  .heading {
+    color: $text-black;
+    margin-bottom: 20px;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+    @include us-home-sprite(-16px, -13px);
+  }
+
+  .footer_sitelinks {
+    @include flexbox();
+
+    >a {
+      width: 90px;
+      margin-right: 10px;
+    }
+  }
+
+  .section {
+    margin-bottom: 10px;
+    flex: 2;
+    @include flexbox();
+
+    .section_items {
+      flex: 2;
+      flex-wrap: wrap;
+      @include flexbox();
+
+      >a {
+        width: 50%;
+        padding: 0px 12px 10px;
+        color: $text-black;
+        position: relative;
+        font: normal 0.73rem/16px $Montserrat;
+
+        &::before {
+          content: '';
+          width: 5px;
+          height: 5px;
+          border: 1px solid rgba($red_bg, 0.3);
+          position: absolute;
+          left: 0px;
+          top: 5px;
+          @include border-radius(100%);
+        }
+      }
+    }
+
+    .section_heading {
+      width: 90px;
+      font: 700 0.65rem/12px $Montserrat;
+      text-transform: uppercase;
+      padding-top: 3px;
+      margin-right: 10px;
+      letter-spacing: -0.2px;
+    }
+  }
+
+  .disclaimer {
+    border-top: 1px dotted #a5a5a5;
+    padding-top: 12px;
+    font: normal 0.65rem/16px $Montserrat;
+  }
+
+  .footer_intrinsic_size {
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
+  }
+}
+
+.backtotop {
+  background: $red_bg;
+  position: fixed;
+  z-index: 2;
+  bottom: 59px;
+  right: 16px;
+  display: none;
+  background-size: 500px;
+  box-shadow: 0 2px 4px 0 rgba($black1, 0.2);
+  width: 40px;
+  height: 40px;
+  border: none;
+  @include us-home-sprite(-36px -815px);
+  @include transform(rotate(90deg));
+  @include border-radius(100%);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sticky {
+  .backtotop {
+    display: block;
+  }
+}
+
+.fbn_ad_container{
+  margin-bottom: 50px;
+}
+.fbn_ad {
+  background-color: white;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  left: 0;
+  min-height: 50px;
+  position: fixed;
+}

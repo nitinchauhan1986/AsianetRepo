@@ -1,0 +1,526 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+/*
+* TODO: this file should only contain css for both web/wap
+* is this class 'after_section_ad' common ?
+*/
+.mobileWrapper {
+  background: $offwhite;
+
+  .adsPlaceholder {
+    border-bottom: 0;
+  }
+
+  .affiliate_content {
+    background: $white;
+  }
+
+  @include mobile-portrait {
+    :global {
+      .ctn-workaround-div {
+        min-height: 126px;
+        //background-color: rgba($black, 0.03);
+      }
+
+      .liveBlogDataWrapper {
+        margin-bottom: 16px;
+        min-height: 184px;
+
+        > div {
+          margin-bottom: 0;
+        }
+      }
+
+      .ad_300by250.homelist {
+        > div {
+          min-height: 290px;
+        }
+      }
+
+      .placeholderNewsLetterWidget {
+        min-height: 225px;
+      }
+
+      .primeScreenWidgetWrapper {
+        min-height: 225px;
+      }
+
+      .ad_300by250.homelist {
+        &[style*='height: 110px'] {
+          &:before {
+            content: '';
+          }
+
+          &:before {
+            content: '';
+            position: absolute !important;
+            background: url(https://static.toiimg.com/photo/83033307.cms)
+              no-repeat center 16px;
+            background-size: contain;
+            height: calc(100% - 32px);
+            width: calc(100% - 32px);
+            left: 16px;
+            top: 0;
+          }
+        }
+      }
+    }
+
+    .adsPlaceholder {
+      position: relative;
+
+      &.Fixedheight {
+        overflow: hidden;
+        padding-top: 20px;
+        margin-top: -20px;
+      }
+
+      &:global:not(.adsPlaceholder) {
+        min-height: 126px;
+        .ctn-workaround-div {
+          background: $white;
+        }
+      }
+
+      > div,
+      iframe {
+        position: relative;
+        z-index: 1;
+      }
+
+      :global {
+        .ad_300by250.homelist {
+          min-height: 290px;
+          background-color: #f6f6f6;
+
+          &:before {
+            position: relative;
+          }
+        }
+
+        .ctn-workaround-div {
+          .ad_300by250.homelist {
+            min-height: auto;
+            background-color: transparent;
+          }
+        }
+      }
+
+      &:global(.adsPlaceholder) {
+        :global {
+          .ctn-workaround-div {
+            .ad_300by250.homelist {
+              min-height: 290px !important;
+              background-color: #f6f6f6 !important;
+
+              &[style*='height: 230px'] {
+                iframe {
+                  max-height: 90% !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    :global(.wrapperMobileHome) {
+      .adsPlaceholder:first-of-type {
+        background-color: transparent;
+
+        > div {
+          margin-top: 0;
+          margin-bottom: 0;
+
+          > div {
+            margin-top: 0 !important;
+          }
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          background: url(https://static.toiimg.com/photo/83033307.cms)
+            no-repeat;
+          background-size: contain;
+          height: calc(100% - 32px);
+          width: calc(100% - 32px);
+          left: 16px;
+          top: 0;
+        }
+
+        :global {
+          .ad_300by250.homelist:before {
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}
+
+.inlineIframe {
+  margin: -17px 16px 0px 16px;
+  border-bottom: 0px !important;
+}
+
+.btw_sections {
+  margin: 8px 16px;
+}
+
+.inline_list_ad {
+  border: 0px !important;
+  text-align: center;
+
+  > div {
+    padding: 18px 0;
+    background: $offwhite;
+    margin: -17px 0 16px;
+  }
+}
+
+.after_section_ad {
+  text-align: center;
+}
+
+.paddingBottom12 {
+  padding-bottom: 12px;
+}
+
+.paddingTop12 figure {
+  padding-top: 12px;
+}
+
+.paddingBottom24:not(:last-of-type) {
+  padding-bottom: 24px;
+}
+
+.paddingBottom24.paddingTop12 figure {
+  padding-top: 0px;
+}
+
+.rhs_col {
+  // padding-left: 30px;
+  // margin-left: 10px !important;
+  // @include border-left;
+
+  :global {
+    [class*='col'] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.accordionBlock {
+  @include desktop {
+    padding-left: 40px;
+    margin-left: 10px;
+    @include border-left;
+  }
+
+  @include tablet-landscape {
+    padding-left: 20px;
+  }
+
+  @include tablet-portrait {
+    padding-top: 20px;
+  }
+}
+
+:global {
+  body.bgImg {
+    background: none !important;
+
+    .gadget_review {
+      margin: -42px 0 0 0;
+    }
+  }
+
+  .tynt-ad-fence {
+    z-index: 999;
+  }
+}
+
+:global {
+  .corona_counter_web {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  .corona_counter_mweb {
+    margin-bottom: -15px;
+    position: relative;
+    z-index: 1;
+    border-bottom: 0 !important;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+      width: calc(100% - 32px);
+      top: -30px;
+      position: relative;
+      left: 16px;
+      z-index: -1;
+    }
+  }
+}
+
+// :global {
+
+//   #toggle,
+//   #toggle1,
+//   #toggle2 {
+//     overflow-y: hidden;
+//     max-height: 0;
+//     transition-property: max-height;
+//     transition-duration: .5s;
+//     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+//     list-style-type: none;
+//   }
+
+//   #toggle:target,
+//   #toggle1:target,
+//   #toggle2:target {
+//     max-height: 350px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-end;
+
+//   }
+
+//   .open {
+//     display: inline-block;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//   }
+
+//   #toggle:target+.close,
+//   #toggle1:target+.close,
+//   #toggle2:target+.close {
+//     display: inline-block;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//   }
+
+//   #toggle:target+.close+.open,
+//   #toggle1:target+.close+.open,
+//   #toggle2:target+.close+.open {
+//     display: none;
+//   }
+
+//   // .close {
+//   //   display: none;
+//   // }
+//   .terms-anchors>li {
+//     position: relative;
+//     padding-right: 60px;
+//     width: 320px;
+//     list-style-type: none;
+//   }
+// }
+
+.maskindiabanner {
+  margin: 0px;
+
+  > img {
+    @include no-mobile {
+      height: 130px;
+      object-fit: contain;
+      object-position: top;
+    }
+
+    @include mobile {
+      margin: -16px 0 16px 0;
+    }
+  }
+}
+
+.topmrecright {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.election_wrapper {
+  :global {
+    .gadget_review {
+      margin: -12px 0px 0px 0px !important;
+    }
+  }
+
+  &:after {
+    display: none;
+  }
+}
+
+.default_h1 {
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0px;
+  padding: 20px 16px 0;
+  text-transform: uppercase;
+
+  h1 {
+    display: inline;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
+
+// This class Temp bases so we need to delete this after the Bihar Election
+.iframeoverflowwrapper {
+  overflow-y: auto;
+  border: 0 !important;
+  background: #fff;
+
+  > div {
+    margin-top: 10px !important;
+  }
+}
+
+.infocuswidth {
+  // :global {
+  //   a {
+  //     @include xxl-desktop {
+  //       display: inline-block !important;
+  //     }
+  //   }
+  // }
+
+  & + :global(.paisa-wrapper) {
+    margin-top: 40px;
+  }
+}
+
+// .opinionSection {
+//   :global {
+//     h2 {
+//       a {
+//         &::after {
+//           top: 40% !important;
+//           transform: rotate(45deg) scale(0.7) translateY(-50%) !important;
+//         }
+
+//         font-size: 0.78rem;
+//         padding-right: 16px;
+//         font-weight: 700;
+//       }
+//     }
+//   }
+// }
+
+.ctnBannerads {
+  &:before {
+    content: '';
+    height: 3px;
+    display: block;
+    border-top: 1px dotted $black1;
+    border-bottom: 1px dotted $black1;
+    margin: 0px 16px 40px;
+    width: 100%;
+  }
+
+  :global {
+    .paisa-wrapper {
+      padding: 0px;
+      overflow: hidden;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.staticbanner {
+  &:before {
+    content: '';
+    height: 3px;
+    display: block;
+    border-top: 1px dotted $black1;
+    border-bottom: 1px dotted $black1;
+    margin: 40px 0;
+    width: 100%;
+  }
+
+  margin: 0 auto;
+  text-align: center;
+
+  .innerWrapper {
+    @include flexbox;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-height: 100px;
+      margin: 0 20px;
+
+      @include tablet-portrait {
+        max-width: 230px;
+        margin: 0px 10px;
+      }
+    }
+
+    .slugadboxhp {
+      :global {
+        .paisa-wrapper {
+          margin: 0 20px;
+
+          &:before {
+            content: inherit;
+          }
+
+          @include tablet-portrait {
+            margin: 0px 10px;
+          }
+        }
+      }
+    }
+
+    &.slugbannerouter {
+      font-size: 0;
+      line-height: 0;
+    }
+  }
+}
+
+.budgetWidget {
+  margin: -24px 0px 16px;
+  background: #fff;
+  border: 0px !important;
+}
+
+:global {
+  .ATF_wrapper {
+    height: 70px;
+    background-color: #f6f6f6;
+
+    .ATF_mobile_ads {
+      text-align: center;
+      margin: 0px auto;
+
+      > div:not(:empty) {
+        padding: 8px 0;
+        position: relative;
+        z-index: 1;
+        overflow: visible;
+        height: inherit !important;
+      }
+
+      > div:empty {
+        display: none;
+      }
+    }
+  }
+}
+:global(.top_stories) {
+  .card {
+    border: none;
+  }
+}
+

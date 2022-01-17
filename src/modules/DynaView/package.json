@@ -1,0 +1,6 @@
+{
+  "name": "DynaView",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./DynaView.js"
+}

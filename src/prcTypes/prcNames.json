@@ -1,0 +1,14 @@
+{
+  "TOI_PLUS": {
+    "1": "TOIPlusFreeTrial",
+    "3": "TOIPlusFreeTrial",
+    "5": "TOIPlusPAID",
+    "8": "TOIPlusPAID"
+  },
+  "TIMESPRIME": {
+    "1": "TOIPlusFreeTrial_TimesPrime",
+    "3": "TOIPlusFreeTrial_TimesPrime",
+    "5": "TimesPrimePaid_TimesPrime",
+    "8": "TOIPlusPAID_TimesPrime"
+  }
+}

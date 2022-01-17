@@ -1,0 +1,302 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.electionBattle {
+  margin-top: 20px;
+}
+
+.battleHeader {
+  @include flexbox;
+  @include justify-content-between;
+  @include align-items-center;
+  margin-bottom: 12px;
+
+  h4 {
+    font-size: 14px;
+    line-height: 20px;
+    color: $graynew;
+    font-weight: 500;
+    margin-right: 12px;
+  }
+}
+
+.selectBox {
+  display: inline-block;
+  outline: none;
+  background: none;
+  position: relative;
+  -ms-flex: 1;
+  flex: 1;
+  @include border-radius(4px);
+
+  &:after {
+    position: absolute;
+    content: '';
+    border: solid $black;
+    border-width: 0 1px 1px 0;
+    width: 5px;
+    height: 5px;
+    right: 12px;
+    top: 50%;
+    margin-top: -4px;
+    pointer-events: none;
+    @include transform(rotate(45deg));
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  select {
+    border: 1px solid $black1;
+    height: 28px;
+    font-size: 14px;
+    line-height: 20px;
+    color: $black1;
+    width: 100%;
+    font-weight: 500;
+    padding: 0 24px 0 8px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    @include border-radius(4px);
+  }
+}
+
+.constituencyName {
+  padding: 4px 16px;
+  font-size: 10px;
+  line-height: 16px;
+  color: $graynew;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ececec;
+  text-align: center;
+
+  strong {
+    padding-left: 5px;
+    margin-left: 4px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background: $graynew;
+      width: 1px;
+      height: 10px;
+      left: 0;
+      top: 2px;
+    }
+  }
+}
+
+.box {
+  position: relative;
+  border: 1px solid #ececec;
+  // padding: 16px;
+  @include border-radius(4px);
+}
+
+.candidateName {
+  color: $black1;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  @include line-clamp(2);
+}
+
+.candidate {
+  margin: 0 16px;
+  padding: 16px 0;
+  @include flexbox;
+  // @include justify-content-between;
+  @include align-items-center;
+
+  &.first {
+    border-bottom: 1px solid #ececec;
+  }
+}
+
+.image {
+  flex: 0 0 52px;
+  height: 52px;
+  @include border-radius(50%);
+  position: relative;
+
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include border-radius(50%);
+    @include gradient(rgba($black, 0.02), rgba($black, 0.02), vertical);
+  }
+
+  img {
+    @include border-radius(50%);
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.details {
+  // flex: 1;
+  margin-left: 12px;
+}
+
+.battleInfo {
+  display: inline-block;
+  font-size: 10px;
+  line-height: 13px;
+  text-transform: uppercase;
+  box-shadow: 0 1px 0 0 #ececec;
+  padding: 0 4px;
+  background-color: #ececec;
+  @include border-radius(4px);
+
+  span+span {
+    padding-left: 5px;
+    margin-left: 4px;
+    position: relative;
+
+    &:empty {
+      display: none;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      background: $black1;
+      width: 1px;
+      height: 8px;
+      left: 0;
+      top: 50%;
+      @include transform(translateY(-50%));
+    }
+  }
+
+  &.leading {
+    background-color: #cce9ff;
+  }
+
+  &.trailing {
+    background-color: #fce2cc;
+  }
+
+  &.won {
+    background-color: #cceede;
+  }
+
+  &.lost {
+    background-color: #f9d1d3;
+  }
+}
+
+.battleResult {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  padding: 0 12px;
+  box-shadow: 0 1px 0 0 #ececec;
+  white-space: nowrap;
+  @include border-radius(4px);
+  @include transform(translateX(-50%));
+
+  &.won {
+    background-color: #cceede;
+  }
+
+  .battleInfo {
+    background-color: $white;
+    margin-left: 8px;
+  }
+}
+
+.buttonGrp {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.button {
+  font-size: 10px;
+  line-height: 16px;
+  padding: 4px 16px;
+  background: $toi_red;
+  border: 0;
+  color: $text-white;
+  font-weight: 700;
+  text-transform: uppercase;
+  @include border-radius(4px);
+
+  +.button {
+    margin-left: 8px;
+  }
+}
+
+:global(.ASElectionInsert) {
+  .selectBox {
+    flex: initial;
+  }
+
+  .electionBattle {
+    padding-top: 20px;
+    border-top: 1px solid #ececec;
+    margin-top: 12px;
+  }
+
+  .battleHeader {
+    justify-content: initial !important;
+  }
+
+  .box {
+    margin-bottom: 12px;
+  }
+
+  .btnGrp {
+    text-align: center;
+  }
+
+  .candidateList {
+    padding: 16px;
+    @include flexbox;
+    @include justify-content-between;
+  }
+
+  .candidateName {
+    margin-bottom: 0;
+  }
+
+  .candidate {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+
+    &.first {
+      border-right: 1px solid #ececec;
+      border-bottom: 0;
+    }
+
+    +.candidate {
+      flex-direction: row-reverse;
+
+      .details {
+        text-align: right;
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+:global(.lbStarCndtRHS) {
+  .electionBattle {
+    margin-top: 0;
+  }
+}

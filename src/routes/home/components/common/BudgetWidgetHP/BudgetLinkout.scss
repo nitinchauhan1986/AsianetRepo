@@ -1,0 +1,242 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+$up: #00aa5a;
+$red: #e21b22;
+
+@mixin budget-icon($positionX: null, $positionY: null) {
+  background-image: url(https://static.toiimg.com/photo/80600399.cms);
+  background-repeat: no-repeat;
+  background-position: $positionX $positionY;
+}
+
+.externalLinks {
+  @include mobile {
+    @include flexbox;
+    overflow: auto;
+    padding: 0px 24px;
+    margin-top: 22px;
+    overflow-y: hidden;
+
+    a {
+      min-width: 100px;
+      height: 100px;
+      @include border-radius(4px);
+      margin-right: 12px;
+      @include flexbox;
+      flex-direction: column;
+      padding-bottom: 4px;
+
+      @include mobile {
+        padding-bottom: 4px;
+      }
+
+      .text {
+        display: block;
+        text-align: center;
+        line-height: 12px;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 0 4px;
+      }
+    }
+
+    &:after {
+      content: '';
+      min-width: 1px;
+    }
+  }
+
+  @include no-mobile {
+    :global {
+      .slick-slide {
+        display: inline-block;
+
+        a {
+          max-width: 122px;
+          min-height: 122px;
+          min-width: 122px;
+          background-color: #cceede;
+          @include border-radius(4px);
+          @include flexbox;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 120px;
+          font: 600 12px/12px $Montserrat;
+          color: $black1;
+          text-transform: uppercase;
+          text-align: center;
+          letter-spacing: -0.2px;
+          padding: 4px 8px 12px;
+          margin-right: 16px;
+        }
+      }
+
+      .slick-slider {
+        position: relative;
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+
+        .slick-dots {
+          position: absolute;
+          @include transform(translateX(-50%));
+          left: 50%;
+          bottom: -25px;
+
+          li {
+            display: inline-block;
+
+            &.slick-active {
+              button {
+                background: #000;
+              }
+            }
+
+            button {
+              background: #cccccc;
+              width: 8px;
+              height: 8px;
+              @include border-radius(20px);
+              border: none;
+              margin-right: 8px;
+              text-indent: -1000000px;
+            }
+          }
+        }
+
+        .slick-arrow {
+          position: absolute;
+          right: 20px;
+          text-indent: -9999px;
+          width: 25px;
+          height: 16px;
+          bottom: -24px;
+          z-index: 1;
+          background: transparent;
+          @include us-home-sprite(-14px -827px);
+          @include transform(scale(1.2));
+          border: 0px;
+
+          &.slick-next {
+            @include transform(rotate(180deg) scale(1.2));
+            right: 0px;
+          }
+
+          &.slick-disabled {
+            @include Opacity(0.5);
+            cursor: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .thumbicon {
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: 0 auto;
+
+    @include mobile {
+      height: 70px;
+    }
+
+    &.taxcalculator {
+      @include budget-icon(0, 4px);
+
+      @include mobile {
+        background-position: 0 -1px;
+      }
+    }
+
+    &.budgetgame {
+      @include budget-icon(-85px 0px);
+
+      @include mobile {
+        background-position: -85px -7px;
+      }
+    }
+
+    &.budgetcrossword {
+      @include budget-icon(-166px 0px);
+
+      @include mobile {
+        background-position: -166px -6px;
+      }
+    }
+
+    &.datahub {
+      @include budget-icon(-255px 0);
+
+      @include mobile {
+        background-position: -250px -6px;
+      }
+    }
+
+    &.indiaearns {
+      @include budget-icon(-340px 0);
+
+      @include mobile {
+        background-position: -335px -8px;
+      }
+    }
+
+    &.budgetquiz {
+      @include budget-icon(-2px -83px);
+
+      @include mobile {
+        background-position: 3px -89px;
+      }
+    }
+
+    &.spendsgame {
+      @include budget-icon(-83px -83px);
+
+      @include mobile {
+        background-position: -81px -94px;
+      }
+    }
+
+    &.budgetanalysis {
+      @include budget-icon(-167px -83px);
+
+      @include mobile {
+        background-position: -167px -92px;
+      }
+    }
+
+    &.budgetspecial {
+      @include budget-icon(-250px -83px);
+
+      @include mobile {
+        background-position: -250px -90px;
+      }
+    }
+
+    &.areyousmarter {
+      @include budget-icon(-2px -173px);
+
+      @include mobile {
+        background-position: 2px -173px;
+      }
+    }
+
+    &.wordplay {
+      @include budget-icon(-86px -168px);
+
+      @include mobile {
+        background-position: -82px -171px;
+      }
+    }
+
+    &.cheaperdearer {
+      @include budget-icon(-336px -87px);
+
+      @include mobile {
+        background-position: -334px -95px;
+      }
+    }
+  }
+}

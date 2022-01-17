@@ -1,0 +1,230 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+.cdwrapper {
+  // @include mobile {
+  //   margin-bottom: 40px
+  // }
+
+  .tophead {
+    @include flexbox;
+
+    @include mobile {
+      padding: 0 24px;
+      margin-top: 24px;
+    }
+
+    .tabs {
+      span {
+        font: 500 12px/16px $Montserrat;
+        color: $black1;
+        text-transform: uppercase;
+        margin-right: 16px;
+        line-height: 22px;
+        display: inline-block;
+        cursor: pointer;
+
+        &.active {
+          color: #e21b22;
+          border-bottom: 2px solid #e21b22;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .viewall {
+      @include mobile {
+        display: none;
+      }
+      margin-left: auto;
+      font: 500 12px/16px $Montserrat;
+      color: #e21b22;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border: solid #e21b22;
+        border-width: 0 1px 1px 0;
+        margin: -1px 0 0 3px;
+        vertical-align: middle;
+        @include transform(rotate(-45deg));
+      }
+    }
+  }
+  .view_all_link {
+    @include no-mobile {
+      display: none;
+    }
+    @include mobile {
+      .viewall {
+        margin: 16px auto 0;
+        font: 600 12px/16px $Montserrat;
+        color: #e21b22;
+        display: block;
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          border: solid #e21b22;
+          border-width: 0 1px 1px 0;
+          margin: -1px 0 0 3px;
+          vertical-align: middle;
+          @include transform(rotate(-45deg));
+        }
+      }
+    }
+  }
+
+  .slider {
+    margin-top: 8px;
+    position: relative;
+
+    .cheapercontent,
+    .dearercontent {
+      display: none;
+
+      @include mobile {
+        padding: 0 0px 0 24px;
+      }
+
+      &.active {
+        display: block;
+      }
+
+      &:after {
+        content: '';
+        min-width: 1px;
+      }
+
+      :global {
+        .slick-slide {
+          display: inline-block;
+          padding-right: 16px;
+          min-width: 344px;
+
+          @include mobile {
+            min-width: 250px;
+          }
+        }
+
+        .slick-slider {
+          position: relative;
+          position: relative;
+          display: block;
+          box-sizing: border-box;
+
+          .slick-list {
+            overflow-y: hidden;
+            max-height: 115px;
+          }
+
+          .slick-dots {
+            position: absolute;
+            @include transform(translateX(-50%));
+            left: 50%;
+            bottom: -25px;
+
+            @include mobile {
+              display: none !important;
+            }
+
+            li {
+              display: inline-block;
+
+              &.slick-active {
+                button {
+                  background: #000;
+                }
+              }
+
+              button {
+                background: #cccccc;
+                width: 8px;
+                height: 8px;
+                @include border-radius(20px);
+                border: none;
+                margin-right: 8px;
+                text-indent: -1000000px;
+              }
+            }
+          }
+
+          .slick-arrow {
+            position: absolute;
+            right: 20px;
+            text-indent: -9999px;
+            width: 25px;
+            height: 16px;
+            bottom: -24px;
+            z-index: 1;
+            background: transparent;
+            @include us-home-sprite(-14px -827px);
+            @include transform(scale(1.2));
+            border: 0px;
+
+            @include mobile {
+              display: none !important;
+            }
+
+            &.slick-next {
+              @include transform(rotate(180deg) scale(1.2));
+              right: 0px;
+            }
+
+            &.slick-disabled {
+              @include Opacity(0.5);
+              cursor: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sliderItems {
+    border: 1px solid #ececec;
+    padding: 12px;
+    border-bottom: 2px solid #00aa5a;
+    @include border-radius(4px);
+
+    p {
+      font: 400 14px/20px $Montserrat;
+      color: $black1;
+      margin-top: 4px;
+      white-space: initial;
+      @include line-clamp(3);
+
+      @include tablet-portrait {
+        @include line-clamp(2);
+      }
+    }
+
+    .itemTop {
+      @include flexbox;
+
+      h3 {
+        font: 700 16px/24px $Montserrat;
+        color: $black1;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        margin-left: auto;
+      }
+    }
+  }
+
+  .dearercontent {
+    .sliderItems {
+      border-bottom-color: #e21b22;
+    }
+  }
+}

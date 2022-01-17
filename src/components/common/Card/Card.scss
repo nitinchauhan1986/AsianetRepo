@@ -1,0 +1,791 @@
+@import './src/scss_v2/helpers/_variables.scss';
+@import './src/scss_v2/helpers/_mixins.scss';
+
+@keyframes gogoloader {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes gogoloader {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes gogoloader {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+%thumb_icon {
+  background: $red_bg;
+  min-width: 53px;
+  padding: 1px 10px 1px 5px;
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-style: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  left: 6px;
+  bottom: 6px;
+  line-height: 18px;
+  @include flexbox();
+  @include border-radius(2px);
+  @include align-items-center();
+}
+
+%arrow {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+@mixin video_and_photos_textabove {
+  & .cardimage::after {
+    content: '';
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    @include gradient(rgba($black-rgba, 0), rgba($black-rgba, 0.6), vertical);
+    @include border-radius(4px);
+  }
+
+  figcaption {
+    position: absolute;
+    left: 0;
+    margin: 0 20px;
+    color: $white;
+    text-shadow: 0 2px 0 rgba($black-rgba, 0.3);
+    z-index: 2;
+  }
+}
+
+.card_category {
+  padding-bottom: 5px;
+
+  >a {
+    font-size: 10px;
+    color: $text-black;
+    text-transform: uppercase;
+  }
+}
+
+.cardwrapper {
+  -ms-flex-align: start;
+  align-items: flex-start;
+  @include flexbox();
+
+  @include mobile {
+    flex-direction: row-reverse;
+  }
+}
+
+.liveBtn {
+  background: $new-rust-color-theme;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 7px 5px 25px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 1;
+  @include border-radius(2px);
+
+  &:before,
+  &:after {
+    opacity: 0;
+    box-sizing: border-box;
+    content: '\0020';
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px #fff, inset 0 0 10px #fff;
+    @include border-radius(100px);
+  }
+
+  &:before {
+    z-index: 2;
+    -webkit-animation: gogoloader 2s infinite;
+    -moz-animation: gogoloader 2s infinite;
+    animation: gogoloader 2s infinite;
+  }
+
+  &:after {
+    z-index: 1;
+    -webkit-animation: gogoloader 2s infinite 1s;
+    -moz-animation: gogoloader 2s infinite 1s;
+    animation: gogoloader 2s infinite 1s;
+  }
+}
+
+.cardimage {
+  -ms-flex: 0 0 80px;
+  flex: 0 0 80px;
+  @include aspect-ratio(16, 9);
+
+  >.content {
+    overflow: hidden;
+    //border: 1px solid rgba($black1);
+    height: 100%;
+    @include border-radius(4px);
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+      object-position: top;
+      box-shadow: inset 0 0 50px 5px rgba($black-rgba, 0.15);
+      background: $white url(https://static.toiimg.com/photo/71149155.cms)no-repeat center;
+      background-size: 20%;
+      @include transition(all 0.5s);
+      @include backface-visibility(hidden);
+
+      // @include border-radius(4px);
+      &.fit_contain {
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.mediaphotothumb,
+.mediavideothumb {
+  transform-origin: left bottom;
+  @extend %thumb_icon;
+
+  @include mobile {
+    bottom: -10px;
+  }
+
+  &:empty {
+    min-width: auto;
+    padding: 4px 0px 4px 4px;
+    left: 0;
+    bottom: 0;
+    @include border-radius(0 4px);
+  }
+
+  &:before {
+    content: '';
+    height: 13px;
+    // background-size: 370px;
+    @extend %arrow;
+  }
+}
+
+.mediaphotothumb {
+  &:before {
+    width: 17px;
+    vertical-align: middle;
+    // @include us-home-sprite(-33px -524px);
+    @include us-home-sprite(-80px -669px);
+    margin: 0;
+  }
+}
+
+.mediavideothumb {
+  &:before {
+    width: 14px;
+    @include us-home-sprite(-54px -245px);
+    background-size: 460px;
+  }
+}
+
+.card {
+  @include mobile {
+    padding: 0 0 16px;
+    margin: 0 16px 16px;
+    // border-bottom: 1px dotted rgba($black, 0.3);
+    border-top: 0px !important;
+  }
+
+  @include no-mobile {
+    border-top: 1px dotted rgba($black-rgba, 0.3);
+
+    &:hover {
+      .cardimage>.content img {
+        @include transform(scale(1.1));
+      }
+
+      figcaption {
+        color: rgba($black-rgba, 0.5);
+      }
+    }
+  }
+
+  figcaption {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: $text-black;
+    @include line-clamp(3);
+    @include transition(all 0.5s);
+
+    @include no-mobile {
+      margin-left: 16px;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    @include mobile {
+      margin-right: 16px;
+      flex: 2;
+      margin-left: 0px;
+      height: 62px;
+    }
+
+  }
+
+  // Common for Lead and media
+
+  &.leadthumb,
+  &.mediathumb {
+    // .card_category {
+    //   display: none;
+    // }
+
+    .cardwrapper {
+      @include no-mobile {
+        display: block;
+      }
+
+      @include mobile {
+        -ms-flex-direction: column;
+        flex-direction: column;
+      }
+    }
+
+    .cardimage {
+      width: 100%;
+    }
+
+    .mediaphotothumb,
+    .mediavideothumb {
+      @include no-mobile {
+        bottom: 10px;
+        left: 10px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  // This css for Media (Photo/Video) card
+  &.mediathumb {
+    margin: 0 0 15px;
+    position: relative;
+    border: none;
+    padding-bottom: 0;
+
+    figcaption {
+      margin: 0;
+      // @include mobile {
+      //   min-height: 60px;
+      // }
+
+      @include no-mobile {
+        height: 54px;
+        min-height: 54px;
+      }
+    }
+
+    .cardimage {
+      @include mobile {
+        margin-bottom: 16px;
+      }
+
+      @include no-mobile {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  @include mobile {
+    &.videomediathumb {
+      figcaption {
+        min-height: 60px;
+      }
+    }
+  }
+
+  // This css for Media (Photo/Video) card End
+
+  &.photoWidget,
+  &.videoWidget {
+    @include no-mobile {
+      .titleWithIcon {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        z-index: 10;
+        padding: 12px 16px;
+
+        .mediaphotothumb,
+        .mediavideothumb,
+        figcaption {
+          position: relative;
+          left: auto;
+          bottom: auto !important;
+        }
+
+        .mediaphotothumb,
+        .mediavideothumb {
+          display: inline-block;
+          margin-bottom: 6px;
+        }
+
+        .mediavideothumb {
+          &:before {
+            position: relative;
+            top: 3px;
+          }
+        }
+
+        figcaption {
+          margin: 0 !important;
+          position: relative !important;
+        }
+      }
+    }
+  }
+
+  // This css for Video/Photo Widget start
+  &.videoWidget {
+    @include no-mobile {
+      margin: 0 0 16px;
+
+      &:nth-last-child(-n + 2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include tablet-portrait {
+      padding-left: 0;
+    }
+
+    @include mobile {
+      &:nth-last-child(-n + 2) {
+        margin-top: 8px;
+      }
+    }
+
+    @include no-mobile {
+      .titleWithIcon {
+        .mediavideothumb {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    @include mobile {
+      .titleWithIcon {
+        position: relative;
+
+        .mediavideothumb {
+          top: -27px;
+          bottom: auto;
+          // left: 28px;
+        }
+      }
+    }
+
+    figcaption {
+      color: rgba($white-rgba, 0.8);
+
+      @include no-mobile {
+        font-size: 13px;
+        line-height: 19px;
+        max-height: 38px;
+        position: relative;
+        min-height: 0;
+        @include line-clamp(2);
+      }
+
+      @include mobile {
+        font-size: 14px;
+        line-height: 20px;
+        max-height: 60px;
+        @include line-clamp(3);
+      }
+    }
+  }
+
+  &.photoWidget {
+    margin: 0px;
+    @include video_and_photos_textabove();
+
+    @include no-mobile {
+      .cardimage {
+        margin-bottom: 10px;
+
+        &:after {
+          height: 100%;
+          @include gradient(rgba($black-rgba, 0.2), rgba($black-rgba, 0.2), vertical);
+        }
+      }
+    }
+
+    @include tablet-portrait {
+      .titleWithIcon {
+        padding: 10px;
+      }
+    }
+
+    .titleWithIcon {
+      @include no-mobile {
+        figcaption {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 700;
+        }
+      }
+
+      .mediaphotothumb:empty {
+        display: none;
+      }
+    }
+
+    figcaption {
+      bottom: 18px;
+      height: auto;
+      min-height: 0;
+    }
+  }
+
+  // This css for Video/Photo Widget End
+
+  // This css for leadthumb card (city,business,sports) for desktop
+  .toiPrime {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background-color: #ffffff;
+    @include toiPlus_sprite(-3px -105px);
+    border-radius: 4px;
+    width: 42px;
+    height: 18px;
+    background-size: 50px;
+  }
+
+  .toiplusIcon {
+    position: absolute;
+    background-color: #ffffff;
+    @include toiPlus_sprite(-7px -91px);
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+    background-size: 53px;
+    left: 4px;
+    bottom: 4px;
+  }
+
+  &.leadthumb2 {
+    margin: 0 0 30px;
+    position: relative;
+    border: none;
+
+    .cardimage {
+      flex: 1;
+      margin-right: 30px;
+    }
+
+    .details {
+      flex: 1;
+    }
+
+    figcaption {
+      @include no-mobile {
+        font: 700 20px/28px $Montserrat;
+        margin: 0;
+      }
+    }
+
+    p {
+      color: $text-black;
+      margin-top: 10px;
+      font: normal 14px/24px $Montserrat;
+      max-height: 96px;
+      @include line-clamp(4);
+    }
+
+    .mediavideothumb {
+      left: 20px;
+      bottom: 20px;
+      @include transform(scale(1.3));
+    }
+
+    .mediaphotothumb {
+      left: 0;
+      bottom: 0;
+      @include transform(scale(1.3));
+    }
+  }
+
+  // This css for leadthumb card (city,business,sports) for desktop End
+
+  // This css for leadthumb card
+  &.leadthumb {
+    margin: 0 0 16px;
+    position: relative;
+    border: none;
+    padding-bottom: 0;
+
+    @include no-mobile {
+      padding-top: 0;
+    }
+
+    @include mobile {
+      &:not(.videoWidget):not(.mediathumb) {
+        a.cardwrapper {
+          &::after {
+            content: '';
+            width: calc(100% - 32px);
+            margin: 14px 16px 0;
+            @include border-top;
+          }
+        }
+      }
+
+      .cardimage {
+        .content {
+          @include border-radius(0);
+        }
+      }
+    }
+
+    figcaption {
+      @include no-mobile {
+        font: 800 28px/36px $Montserrat;
+        margin: 16px 0 8px;
+        max-height: 108px;
+      }
+
+      @include mobile {
+        margin: 10px 16px 0;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 700;
+        height: auto;
+      }
+    }
+
+    // This css for Video/Photo Widget start
+    &.videoWidget {
+      @include no-mobile {
+        // width: 620px;
+        margin-bottom: 0;
+        @include video_and_photos_textabove();
+
+        .cardimage {
+          opacity: 0.8;
+          margin-bottom: 0;
+        }
+
+        figcaption {
+          font-size: 20px;
+          line-height: 28px;
+          max-height: 56px;
+          bottom: 15px;
+        }
+      }
+
+      @include mobile {
+        margin-bottom: 24px;
+
+        figcaption {
+          min-height: 0;
+          font-size: 18px;
+          line-height: 24px;
+          max-height: 72px;
+          //padding-top: 8px;
+        }
+      }
+    }
+
+    // Desktop only start
+    &.photoWidget {
+      margin: 0;
+
+      figcaption {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 700;
+        max-height: 72px;
+      }
+    }
+
+    // Desktop only End
+
+    // This css for Video/Photo Widget End
+
+    // This Css for Video Lead thumb
+    &.mediathumb {
+      figcaption {
+        margin: 0 16px;
+      }
+
+      &.photoWidget {
+        figcaption {
+          margin: 0 20px;
+        }
+      }
+    }
+
+    .cardimage {
+      @include mobile {
+        >img {
+          border-radius: 0;
+        }
+      }
+    }
+
+    p:not(:empty) {
+      font: normal 12px/18px $Montserrat;
+      color: $text-black;
+      @include line-clamp(3);
+
+      @include mobile {
+        margin: 5px 16px 0;
+        width: calc(100% - 32px);
+      }
+
+      @include no-mobile {
+        font: normal 14px/24px $Montserrat;
+        height: 72px;
+      }
+    }
+
+    .mediavideothumb {
+      left: 20px;
+
+      @include no-mobile {
+        bottom: 20px;
+      }
+
+      @include transform(scale(1.3));
+    }
+
+    .mediaphotothumb {
+      left: 20px;
+
+      @include no-mobile {
+        bottom: 20px;
+      }
+
+      @include transform(scale(1.3));
+    }
+  }
+
+  // This css for leadthumb card End
+
+  // This css only for Mobile Normal thumb ration change
+  &:not(.mediathumb):not(.leadthumb) {
+    .cardimage {
+      @include mobile {
+        @include aspect-ratio(4, 3);
+      }
+
+      .newsPhoto,
+      .newsVideo {
+        width: 22px;
+        height: 22px;
+        background-color: $red_bg;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        background-size: 350px;
+        @include border-radius(0px 4px 0px 4px);
+
+        @include no-mobile {
+          left: 10px;
+        }
+      }
+
+      .newsPhoto {
+        @include us-home-sprite(-70px -624px);
+        background-size: 470px;
+      }
+
+      .newsVideo {
+        @include us-home-sprite(-28px -1080px);
+      }
+    }
+
+    figcaption {
+      @include no-mobile {
+        margin-top: -4px;
+      }
+
+      @include mobile {
+        margin-top: -5px;
+      }
+    }
+
+    &:not(.leadthumb2) {
+      figcaption {
+        @include no-mobile {
+          max-height: 54px;
+          // margin-top: -4px;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    &.card_intrinsic_size {
+      content-visibility: auto;
+      contain-intrinsic-size: 61px;
+    }
+
+    &.video_card_intrinsic_size {
+      content-visibility: auto;
+      contain-intrinsic-size: 203px;
+    }
+  }
+}
+
+.leadPhotostoryVideoClass {
+  margin-bottom: 20px;
+}

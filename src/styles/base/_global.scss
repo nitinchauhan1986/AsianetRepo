@@ -1,0 +1,43 @@
+@import './../helpers/_variables';
+@import './../helpers/_mixins';
+
+@include mobile {
+  :global {
+    ::-webkit-scrollbar {
+      width: 0;
+      background: transparent;
+      height: 0;
+      display: none;
+    }
+  }
+}
+
+:global {
+  .contentwrapper {
+    margin: 0 auto;
+    max-width: $wrapper-width-small;
+    width: 100%;
+
+    @include xxl-desktop-plus {
+      max-width: $wrapper-width;
+    }
+
+    @include tablet-portrait {
+      padding: 0 15px;
+    }
+
+    @include mobile {
+      width: 100%;
+      padding: 0px;
+      background: $white;
+    }
+  }
+
+  .rpos {
+    position: relative;
+  }
+
+  .apos {
+    position: absolute;
+  }
+}
